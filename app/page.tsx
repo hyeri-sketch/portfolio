@@ -748,17 +748,20 @@ export default function Home() {
           justifyContent: 'center',
           gap: '36px',
         }}>
-          {/* 로고 */}
-          <div style={{position:'absolute', top:'20px', left:'20px'}}>
+          {/* 로고 — nav와 동일하게 */}
+          <div style={{position:'absolute', top:'20px', left:'16px'}}>
             <span style={{
               fontFamily:'var(--font-comfortaa), Comfortaa, cursive',
               fontWeight:700,
               fontSize:'13px',
               letterSpacing:'0.12em',
-              color:'#1A1A1A',
               textTransform:'uppercase',
               whiteSpace:'nowrap',
-            }}>THE HEART OF MATTER</span>
+              color:'#1A1A1A',
+            }}>
+              <span style={{color:'#FF3D7F'}}>THE HEART</span>
+              {' '}OF MATTER
+            </span>
           </div>
           {/* 닫기 버튼 */}
           <button
