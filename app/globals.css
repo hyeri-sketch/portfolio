@@ -46,8 +46,8 @@ body {
 @media (min-width: 768px) { .section-sm { padding: 100px 0; } }
 
 /* ─── Editorial rule lines ─── */
-.rule { width: 100%; height: 1px; background: var(--rule); margin-top: 32px; margin-bottom: 32px; }
-.rule-dark { width: 100%; height: 2px; background: var(--ink); margin-top: 0; margin-bottom: 40px; }
+.rule { width: 100%; height: 1px; background: var(--rule); }
+.rule-dark { width: 100%; height: 2px; background: var(--ink); }
 
 /* ─── Labels ─── */
 .label {
@@ -84,7 +84,7 @@ body {
   font-family: var(--font-comfortaa), "Comic Sans MS", cursive;
   font-weight: 700;
   letter-spacing: -0.01em;
-  line-height: 0.95;
+  line-height: 1.05;
   text-transform: uppercase;
 }
 

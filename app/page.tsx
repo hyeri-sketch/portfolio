@@ -841,7 +841,7 @@ export default function Home() {
               fontStyle:'normal',
               fontWeight:400,
               fontSize:'clamp(4.5rem,13vw,12rem)',
-              lineHeight:0.88,
+              lineHeight:1.0,
               letterSpacing:'0.02em',
               color:'#fff',
             }}>
@@ -852,7 +852,7 @@ export default function Home() {
               fontStyle:'normal',
               fontWeight:400,
               fontSize:'clamp(4.5rem,13vw,12rem)',
-              lineHeight:0.88,
+              lineHeight:1.0,
               letterSpacing:'0.02em',
               color:'#fff',
             }}>
@@ -882,13 +882,13 @@ export default function Home() {
       {/* ─── DESIGNER PROFILE ─── */}
       <section className="section bg-white">
         {/* Top rule */}
-        <div className="container"><div className="rule-dark mb-16 md:mb-24" /></div>
+        <div className="container"><div className="rule-dark" style={{marginBottom:'40px'}} /></div>
 
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
             {/* Left column */}
             <div className="md:col-span-4 fade-up">
-              <p className="label label-accent">Creative Director</p>
+              <p className="label label-accent" style={{marginBottom:'16px'}}>Creative Director</p>
               <h2 className="heading text-4xl md:text-6xl" style={{marginBottom: '12px'}}>{t.designerName}</h2>
               <p style={{fontSize: '14px', color: '#888', letterSpacing: '0.02em', marginTop: '8px'}}>{t.designerTitle}</p>
             </div>
@@ -919,7 +919,7 @@ export default function Home() {
           {/* Pull quote + intro */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
             <div className="fade-up">
-              <p className="label label-accent mb-6">{t.aboutLabel}</p>
+              <p className="label label-accent" style={{marginBottom:'16px'}}>{t.aboutLabel}</p>
               <h2 className="heading-impact whitespace-pre-line" style={{
                 fontSize:'clamp(2.8rem, 7vw, 5.5rem)',
                 color:'#0A0A0A',
@@ -950,7 +950,7 @@ export default function Home() {
           {/* What Makes Us Different */}
           <div style={{marginTop:'100px'}} className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
             <div className="md:col-span-4 fade-up">
-              <p className="label label-accent" style={{fontSize:'13px'}}>{t.aboutDiffLabel}</p>
+              <p className="label label-accent" style={{fontSize:'13px', marginBottom:'16px'}}>{t.aboutDiffLabel}</p>
               <h3 className="heading whitespace-pre-line" style={{fontSize:'clamp(1.7rem, 3.8vw, 2.4rem)', marginBottom:'24px', lineHeight:1.2, marginTop:'4px'}}>{t.aboutDiffTitle}</h3>
               <p className="body-text max-w-xl" style={{fontSize:'18px', lineHeight:'1.85'}}>{t.aboutDiffDesc}</p>
             </div>
@@ -979,10 +979,10 @@ export default function Home() {
       <section id="work" className="section bg-white">
         <div className="container">
           {/* Section header */}
-          <div className="flex items-end justify-between mb-16 md:mb-24">
+          <div className="flex items-end justify-between" style={{marginBottom:'64px'}}>
             <div className="fade-up">
-              <p className="label label-accent mb-4">{t.workLabel}</p>
-              <h2 className="heading-impact" style={{fontSize:'clamp(2.5rem,6vw,5rem)', lineHeight:0.95}}>{t.workTitle}</h2>
+              <p className="label label-accent" style={{marginBottom:'16px'}}>{t.workLabel}</p>
+              <h2 className="heading-impact" style={{fontSize:'clamp(2.5rem,6vw,5rem)', lineHeight:1.05}}>{t.workTitle}</h2>
               <p className="body-text" style={{marginTop:'16px', fontSize:'15px', color:'#888'}}>{t.workSubtitle}</p>
             </div>
             <p className="hidden md:block project-num fade-up stagger-1">
@@ -993,15 +993,15 @@ export default function Home() {
           {/* Projects */}
           <div>
             {projects.map((project, idx) => (
-              <div key={project.id} className="mb-20 md:mb-32 fade-up">
+              <div key={project.id} className="fade-up" style={{marginBottom:'80px'}}>
                 {/* Rule */}
-                <div className="rule" style={{margin:'0 0 40px 0'}} />
+                <div className="rule" style={{marginBottom:'40px'}} />
 
                 {/* Project header */}
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-10 gap-4">
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-4" style={{marginBottom:'40px'}}>
                   <div>
-                    <p className="label mb-4">{project.artist}</p>
-                    <h3 className="heading-impact" style={{fontSize:'clamp(2.5rem,8vw,7rem)',lineHeight:0.9}}>{project.title}</h3>
+                    <p className="label" style={{marginBottom:'16px'}}>{project.artist}</p>
+                    <h3 className="heading-impact" style={{fontSize:'clamp(2.5rem,8vw,7rem)',lineHeight:1.0}}>{project.title}</h3>
                     <p className="body-text" style={{marginTop:'10px', fontSize:'15px'}}>{project.subtitle}</p>
                   </div>
                   <span className="project-num">
@@ -1056,15 +1056,15 @@ export default function Home() {
       <section id="vision" className="section" style={{borderTop:'1px solid #EBEBEB'}}>
         <div className="container">
           {/* Vision Statement */}
-          <div className="rule-dark mb-16 md:mb-20" />
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 mb-20 md:mb-32 fade-up">
+          <div className="rule-dark" style={{marginBottom:'40px'}} />
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 fade-up" style={{marginBottom:'80px'}}>
             <div className="md:col-span-2">
-              <p className="label label-accent">Vision</p>
+              <p className="label label-accent" style={{marginBottom:'16px'}}>Vision</p>
             </div>
             <div className="md:col-span-10">
               <h2 className="heading-impact" style={{
                 fontSize:'clamp(2.8rem, 7vw, 6rem)',
-                lineHeight:0.95,
+                lineHeight:1.05,
                 letterSpacing:'0.02em',
                 color:'#0A0A0A',
                 marginBottom:'56px',
@@ -1085,9 +1085,9 @@ export default function Home() {
           </div>
 
           {/* Interest Areas */}
-          <div className="rule mb-12 md:mb-16" />
-          <div className="mb-12 fade-up">
-            <p className="label">Expanding Horizons</p>
+          <div className="rule" style={{marginTop:'40px', marginBottom:'40px'}} />
+          <div className="fade-up" style={{marginBottom:'48px'}}>
+            <p className="label" style={{marginBottom:'16px'}}>Expanding Horizons</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 fade-up stagger-1" style={{gap:'0'}}>
             {visionAreas[lang].map((area, idx) => (
@@ -1128,10 +1128,10 @@ export default function Home() {
       <section id="services" className="section">
         <div className="container">
           {/* Header */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 mb-16 md:mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16" style={{marginBottom:'64px'}}>
             <div className="md:col-span-5 fade-up">
-              <p className="label label-accent mb-4">{t.servicesLabel}</p>
-              <h2 className="heading-impact" style={{fontSize:'clamp(2.5rem,6vw,5rem)',lineHeight:0.95}}>{t.servicesTitle}</h2>
+              <p className="label label-accent" style={{marginBottom:'16px'}}>{t.servicesLabel}</p>
+              <h2 className="heading-impact" style={{fontSize:'clamp(2.5rem,6vw,5rem)',lineHeight:1.05}}>{t.servicesTitle}</h2>
             </div>
             <div className="md:col-span-7 fade-up stagger-1 flex flex-col justify-end">
               <p style={{
@@ -1151,11 +1151,10 @@ export default function Home() {
           {/* Service cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4" style={{gap:'0', columnGap:'48px'}}>
             {t.services.map((service, idx) => (
-              <div key={service.title} className={`fade-up stagger-${idx + 1}`} style={{
+              <div key={service.title} className={`fade-up stagger-${idx + 1} md:pr-12`} style={{
                 borderTop: '1px solid #D8D8D8',
                 paddingTop: '32px',
                 paddingBottom: '48px',
-                paddingRight: '0',
               }}>
                 <span style={{
                   display:'block',
@@ -1190,7 +1189,7 @@ export default function Home() {
         <div className="container">
           <div className="mb-16 md:mb-24 fade-up">
             <p className="label label-accent mb-4">{t.methodologyLabel}</p>
-            <h2 className="heading-impact" style={{fontSize:'clamp(2.5rem,6vw,5rem)',lineHeight:0.95,color:'#fff'}}>{t.methodologyTitle}</h2>
+            <h2 className="heading-impact" style={{fontSize:'clamp(2.5rem,6vw,5rem)',lineHeight:1.05,color:'#fff'}}>{t.methodologyTitle}</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" style={{gap:0}}>
@@ -1220,7 +1219,7 @@ export default function Home() {
         <div className="container">
           <div className="mb-16 md:mb-24 fade-up">
             <p className="label label-accent mb-4">{t.processLabel}</p>
-            <h2 className="heading-impact" style={{fontSize:'clamp(2.5rem,6vw,5rem)',lineHeight:0.95}}>{t.processTitle}</h2>
+            <h2 className="heading-impact" style={{fontSize:'clamp(2.5rem,6vw,5rem)',lineHeight:1.05}}>{t.processTitle}</h2>
           </div>
 
           <div>
