@@ -479,6 +479,9 @@ export default function Home() {
 
   useEffect(() => {
     const els = document.querySelectorAll(".fade-in-up, .fade-in");
+    // Add animated class after mount so elements are visible without JS
+    els.forEach((el) => el.classList.add("animated"));
+    
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -488,7 +491,7 @@ export default function Home() {
           }
         });
       },
-      { threshold: 0.05, rootMargin: "0px 0px -30px 0px" }
+      { threshold: 0.01, rootMargin: "50px 0px 0px 0px" }
     );
 
     els.forEach((el) => observer.observe(el));
