@@ -770,7 +770,7 @@ export default function Home() {
           {/* 메뉴 링크 */}
           {navLinks.map(link => (
             <a key={link.label} href={link.href} onClick={() => setMobileMenuOpen(false)}
-              style={{fontFamily:'var(--font-heading)', fontSize:'30px', letterSpacing:'-0.01em', color:'#0A0A0A', textDecoration:'none', fontWeight:300, lineHeight:1}}>
+              style={{fontFamily:'var(--font-comfortaa), Comfortaa, cursive', fontSize:'28px', letterSpacing:'0.05em', color:'#0A0A0A', textDecoration:'none', fontWeight:700, lineHeight:1, textTransform:'uppercase'}}>
               {link.label}
             </a>
           ))}
