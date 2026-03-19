@@ -1196,7 +1196,11 @@ export default function Home() {
             {/* Left — big headline */}
             <div className="md:col-span-7 fade-up">
               <p className="label label-accent mb-6">{t.contactLabel}</p>
-              <h2 className="display text-[clamp(3rem,8vw,7rem)] text-white whitespace-pre-line">
+              <h2 className="heading-impact text-white whitespace-pre-line" style={{
+                fontSize:'clamp(3rem,8vw,7rem)',
+                lineHeight:1.15,
+                letterSpacing:'0.02em',
+              }}>
                 {t.contactTitle}
               </h2>
             </div>
