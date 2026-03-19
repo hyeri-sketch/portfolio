@@ -82,7 +82,7 @@ body {
 /* ─── Impact heading (Hero/Section — Comfortaa 700) ─── */
 .heading-impact {
   font-family: var(--font-comfortaa), "Comic Sans MS", cursive;
-  font-weight: 700;
+  font-weight: 900;
   letter-spacing: -0.01em;
   line-height: 1.05;
   text-transform: uppercase;
@@ -266,7 +266,7 @@ body {
 .pull-quote {
   font-family: var(--font-heading);
   font-style: normal;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 1.15;
   letter-spacing: -0.02em;
 }
