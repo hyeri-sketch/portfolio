@@ -1012,14 +1012,35 @@ export default function Home() {
           <div className="mb-12 fade-up">
             <p className="label">Expanding Horizons</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 fade-up stagger-1">
+          <div className="grid grid-cols-1 md:grid-cols-2 fade-up stagger-1" style={{gap:'0'}}>
             {visionAreas[lang].map((area, idx) => (
-              <div key={area.title} className="border-t border-[#E8E8E8] pt-8 pb-12 md:pr-16">
-                <div className="flex items-center gap-4 mb-6">
-                  <span className="project-num">{String(idx + 1).padStart(2, '0')}</span>
-                </div>
-                <h3 className="heading" style={{fontSize:'clamp(1.1rem, 2.5vw, 1.5rem)', marginBottom:'16px', letterSpacing:'-0.01em'}}>{area.title}</h3>
-                <p className="body-text" style={{fontSize:'15px', lineHeight:'1.8'}}>{area.desc}</p>
+              <div key={area.title} style={{
+                borderTop: '1px solid #E0E0E0',
+                paddingTop: '32px',
+                paddingBottom: '48px',
+                paddingRight: '0',
+              }}
+              className="md:odd:pr-16">
+                <span style={{
+                  display:'block',
+                  fontFamily:'var(--font-heading)',
+                  fontSize:'10px',
+                  fontWeight:400,
+                  letterSpacing:'0.2em',
+                  color:'#BBBBBB',
+                  marginBottom:'16px',
+                }}>{String(idx + 1).padStart(2, '0')}</span>
+                <h3 className="heading" style={{
+                  fontSize:'clamp(1.2rem, 2.8vw, 1.6rem)',
+                  marginBottom:'20px',
+                  letterSpacing:'-0.01em',
+                  lineHeight:1.1,
+                }}>{area.title}</h3>
+                <p className="body-text" style={{
+                  fontSize:'15px',
+                  lineHeight:'1.85',
+                  color:'#555',
+                }}>{area.desc}</p>
               </div>
             ))}
           </div>
