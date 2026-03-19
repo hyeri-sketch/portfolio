@@ -857,7 +857,6 @@ export default function Home() {
             </span>
             <span className="hero-text-wrap">
               <span className="hero-text-inner" style={{
-                animationDelay:'0.5s',
                 fontFamily:'var(--font-comfortaa), Comfortaa, cursive',
                 fontStyle:'normal',
                 fontWeight:400,
@@ -865,6 +864,7 @@ export default function Home() {
                 lineHeight:1.0,
                 letterSpacing:'0.02em',
                 color:'#fff',
+                animation:'textReveal 1s cubic-bezier(0.16,1,0.3,1) 0.5s forwards, colorShiftPink 8s ease-in-out 2.5s infinite',
               }}>
                 OF MATTER
               </span>
@@ -872,7 +872,7 @@ export default function Home() {
           </h1>
 
           <div className="hero-tagline-reveal" style={{marginTop:'clamp(32px,6vw,56px)', display:'flex', flexDirection:'column', gap:'16px'}}>
-            <p style={{maxWidth:'400px', color:'rgba(255,255,255,0.55)', fontSize:'15px', lineHeight:1.8, fontWeight:300}}>
+            <p className="hero-color-shift-subtle" style={{maxWidth:'400px', color:'rgba(255,255,255,0.55)', fontSize:'15px', lineHeight:1.8, fontWeight:300}}>
               {t.heroTagline}{t.heroTagline2 && <><br />{t.heroTagline2}</>}
             </p>
             <a href="#work"
