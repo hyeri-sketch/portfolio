@@ -840,9 +840,7 @@ export default function Home() {
         </div>
 
         {/* Issue label */}
-        <div className="absolute top-24 md:top-28 left-0 z-10 container">
-          <p className="label text-white/40 hero-label-reveal">PORTFOLIO 2024</p>
-        </div>
+        {/* PORTFOLIO 2024 label removed */}
 
         {/* Hero content */}
         <div className="relative z-10 container" style={{paddingBottom: 'clamp(60px, 12vw, 120px)'}}>
@@ -868,10 +866,10 @@ export default function Home() {
               <span className="hero-text-inner" style={{
                 fontFamily:'var(--font-comfortaa), Comfortaa, cursive',
                 fontStyle:'normal',
-                fontWeight:400,
+                fontWeight:300,
                 fontSize:'clamp(4.5rem,13vw,12rem)',
                 lineHeight:1.0,
-                letterSpacing:'0.02em',
+                letterSpacing:'0.06em',
                 color:'#fff',
                 animation:'textReveal 1s cubic-bezier(0.16,1,0.3,1) 0.5s forwards, colorShiftPink 8s ease-in-out 2.5s infinite',
               }}>

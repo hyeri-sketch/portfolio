@@ -24,7 +24,7 @@ const dmSerif = DM_Serif_Display({
 const nunito = Nunito({
   subsets: ["latin"],
   variable: "--font-comfortaa",
-  weight: ["800", "900"],
+  weight: ["300", "400", "800", "900"],
   style: ["normal"],
 });
 
