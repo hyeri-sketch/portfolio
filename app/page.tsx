@@ -786,7 +786,7 @@ export default function Home() {
         {/* Background image */}
         <div className="absolute inset-0 z-0">
           <Image src="/images/img_008_48.jpeg" alt="THE HEART OF MATTER" fill
-            className="object-cover brightness-[0.12] hero-bg-img" priority />
+            className="object-cover brightness-[0.12] hero-bg-reveal" priority />
         </div>
 
         {/* Gradient overlay — 하단에서 올라오는 그라데이션 */}
@@ -827,40 +827,46 @@ export default function Home() {
 
         {/* Issue label */}
         <div className="absolute top-24 md:top-28 left-0 z-10 container">
-          <p className="label text-white/40">PORTFOLIO 2024</p>
+          <p className="label text-white/40 hero-label-reveal">PORTFOLIO 2024</p>
         </div>
 
         {/* Hero content */}
         <div className="relative z-10 container" style={{paddingBottom: 'clamp(60px, 12vw, 120px)'}}>
-          <div style={{opacity:0, animation:'fadeInUp 1s ease 0.2s forwards'}}>
+          <div className="hero-label-reveal">
             <p className="label" style={{color:'rgba(255,255,255,0.5)', marginBottom:'24px', fontSize:'12px'}}>{t.heroSubtitle}</p>
           </div>
-          <h1 style={{opacity:0, animation:'fadeInUp 1s ease 0.4s forwards', textShadow:'0 0 80px rgba(255,255,255,0.08), 0 0 160px rgba(255,255,255,0.04)'}}>
-            <span className="block" style={{
-              fontFamily:'var(--font-comfortaa), Comfortaa, cursive',
-              fontStyle:'normal',
-              fontWeight:400,
-              fontSize:'clamp(4.5rem,13vw,12rem)',
-              lineHeight:1.0,
-              letterSpacing:'0.02em',
-              color:'#fff',
-            }}>
-              THE HEART
+          <h1 style={{textShadow:'0 0 80px rgba(255,255,255,0.08), 0 0 160px rgba(255,255,255,0.04)'}}>
+            <span className="hero-text-wrap">
+              <span className="hero-text-inner" style={{
+                animationDelay:'0.3s',
+                fontFamily:'var(--font-comfortaa), Comfortaa, cursive',
+                fontStyle:'normal',
+                fontWeight:400,
+                fontSize:'clamp(4.5rem,13vw,12rem)',
+                lineHeight:1.0,
+                letterSpacing:'0.02em',
+                color:'#fff',
+              }}>
+                THE HEART
+              </span>
             </span>
-            <span className="block" style={{
-              fontFamily:'var(--font-comfortaa), Comfortaa, cursive',
-              fontStyle:'normal',
-              fontWeight:400,
-              fontSize:'clamp(4.5rem,13vw,12rem)',
-              lineHeight:1.0,
-              letterSpacing:'0.02em',
-              color:'#fff',
-            }}>
-              OF MATTER
+            <span className="hero-text-wrap">
+              <span className="hero-text-inner" style={{
+                animationDelay:'0.5s',
+                fontFamily:'var(--font-comfortaa), Comfortaa, cursive',
+                fontStyle:'normal',
+                fontWeight:400,
+                fontSize:'clamp(4.5rem,13vw,12rem)',
+                lineHeight:1.0,
+                letterSpacing:'0.02em',
+                color:'#fff',
+              }}>
+                OF MATTER
+              </span>
             </span>
           </h1>
 
-          <div style={{opacity:0, animation:'fadeInUp 1s ease 0.7s forwards', marginTop:'clamp(32px,6vw,56px)', display:'flex', flexDirection:'column', gap:'16px'}}>
+          <div className="hero-tagline-reveal" style={{marginTop:'clamp(32px,6vw,56px)', display:'flex', flexDirection:'column', gap:'16px'}}>
             <p style={{maxWidth:'400px', color:'rgba(255,255,255,0.55)', fontSize:'15px', lineHeight:1.8, fontWeight:300}}>
               {t.heroTagline}{t.heroTagline2 && <><br />{t.heroTagline2}</>}
             </p>
@@ -872,6 +878,18 @@ export default function Home() {
             </a>
           </div>
         </div>
+
+        {/* Hero 하단 구분선 */}
+        <div style={{
+          position:'absolute',
+          bottom: 0,
+          left: 0,
+          height: '1px',
+          background: 'white',
+          animation: 'lineExpand 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s forwards',
+          width: 0,
+          zIndex: 10,
+        }} />
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 z-10 text-white/30" style={{animation:'fadeInUp 1s ease 1.2s both, scrollPulse 2s ease-in-out 1.5s infinite'}}>
