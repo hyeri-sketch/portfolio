@@ -671,19 +671,18 @@ export default function Home() {
       }`}>
         <div className="container flex items-center justify-between h-16 md:h-20" style={{paddingLeft:'16px', paddingRight:'16px'}}>
           {/* Logo */}
-          <a href="#" style={{display:'flex', alignItems:'center', height:'32px'}}>
-            <Image
-              src={scrolled ? '/images/thom-logo.svg' : '/images/thom-logo-white.svg'}
-              alt="THE HEART OF MATTER"
-              width={100}
-              height={55}
-              style={{
-                objectFit:'contain',
-                height:'40px',
-                width:'auto',
-                transition:'opacity 0.3s',
-              }}
-            />
+          <a href="#" style={{display:'flex', alignItems:'center', height:'32px', textDecoration:'none'}}>
+            <span style={{
+              fontFamily:'var(--font-comfortaa), Comfortaa, cursive',
+              fontWeight:700,
+              fontSize:'13px',
+              letterSpacing:'0.12em',
+              lineHeight:1.2,
+              color: scrolled ? '#1A1A1A' : '#ffffff',
+              transition:'color 0.3s',
+              textTransform:'uppercase',
+              whiteSpace:'nowrap',
+            }}>THE HEART OF MATTER</span>
           </a>
 
           {/* Desktop nav */}
@@ -748,8 +747,15 @@ export default function Home() {
         }}>
           {/* 로고 */}
           <div style={{position:'absolute', top:'20px', left:'20px'}}>
-            <Image src="/images/thom-logo.svg" alt="THE HEART OF MATTER" width={80} height={44}
-              style={{objectFit:'contain', height:'36px', width:'auto'}} />
+            <span style={{
+              fontFamily:'var(--font-comfortaa), Comfortaa, cursive',
+              fontWeight:700,
+              fontSize:'13px',
+              letterSpacing:'0.12em',
+              color:'#1A1A1A',
+              textTransform:'uppercase',
+              whiteSpace:'nowrap',
+            }}>THE HEART OF MATTER</span>
           </div>
           {/* 닫기 버튼 */}
           <button
