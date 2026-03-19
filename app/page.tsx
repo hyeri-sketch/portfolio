@@ -1149,7 +1149,7 @@ export default function Home() {
           </div>
 
           {/* Service cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4" style={{gap:'0', columnGap:'48px'}}>
             {t.services.map((service, idx) => (
               <div key={service.title} className={`fade-up stagger-${idx + 1}`} style={{
                 borderTop: '1px solid #D8D8D8',
