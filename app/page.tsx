@@ -39,17 +39,17 @@ const IconClose = () => (
 const content = {
   ko: {
     heroSubtitle: "크리에이티브 디렉션 콜렉티브",
-    heroTagline: "보이지 않는 감각을 형태로.",
-    heroTagline2: "본질을 시각화하는 경계 없는 크리에이티브.",
+    heroTagline: "우리는 장식하지 않는다. 번역한다.",
+    heroTagline2: "",
     heroCta: "작업 보기",
     designerName: "이혜리",
     designerTitle: "크리에이티브 디렉터 · THE HEART OF MATTER 대표",
     designerBio1: "이혜리는 아티스트의 정체성을 시각 언어로 번역하는 크리에이티브 디렉터입니다.",
     designerBio2: "THE HEART OF MATTER를 이끌며, 브랜딩 전략에서 비주얼 아이덴티티, 앨범 패키지, 콘텐츠 크리에이티브까지 아티스트가 세상과 만나는 모든 접점을 하나의 응집된 경험으로 설계합니다.",
     designerBio3: "BTS, Jungkook, RM, SUGA/Agust D를 포함한 글로벌 아티스트들과의 협업을 통해, 그는 음악이 시작되기 이전부터 팬의 기억에 새겨지는 시각적 세계관을 만들어왔습니다.",
-    designerBio4: "보이지 않는 것을 보이게 하는 것. 그것이 THE HEART OF MATTER의 본질입니다.",
+    designerBio4: "심장이 뛰는 곳에 물질이 생겨나고, 물질이 생겨난 곳에 세계가 열린다.",
     aboutLabel: "About Us",
-    aboutTitle: "필요를 채우고,\n감동을 만든다.",
+    aboutTitle: "다채로움은 혼란이 아니다.\n하나의 본질이\n다양한 표면으로 드러나는 현상이다.",
     aboutDesc1: "THE HEART OF MATTER 는 하나의 개념이 다양한 경험으로 확장되는 해석의 과정으로 바라봅니다.",
     aboutDesc2: "브랜딩 전략을 바탕으로 보이지 않는 감각을 형태로 구체화 하고, 아티스트와 팬이 만나는 모든 접점을 하나의 경험으로 만들어 갑니다.",
     aboutDiffLabel: "우리의 차별점",
@@ -58,9 +58,11 @@ const content = {
     pullQuote: "보이지 않는 것을\n보이게 하는 것.",
     workLabel: "Selected Work",
     workTitle: "프로젝트",
+    workSubtitle: "임팩트는 굉음이 아니다. 울림의 깊이다.",
     workCount: "개 프로젝트",
     servicesLabel: "Services",
     servicesTitle: "서비스 영역",
+    servicesManifesto: "우리는 아티스트 뒤에 숨지 않는다. 아티스트 곁에 선다.",
     servicesDesc: "각 프로젝트에 최적화된 인재와 협업하는 얼라이언스 네트워크를 운영합니다. 브랜드 전략부터 비주얼 디렉션, 최종 딜리버리까지 응집된 크리에이티브 시스템을 구축합니다.",
     methodologyLabel: "Methodology",
     methodologyTitle: "크리에이티브 개발",
@@ -140,17 +142,17 @@ const content = {
   },
   en: {
     heroSubtitle: "Creative Direction Collective",
-    heroTagline: "Translating the hidden Heart into tangible Matter.",
-    heroTagline2: "A borderless creative practice visualizing the essence.",
+    heroTagline: "We do not decorate. We translate.",
+    heroTagline2: "",
     heroCta: "View Work",
     designerName: "Hyeri Lee",
     designerTitle: "Creative Director · Founder of THE HEART OF MATTER",
     designerBio1: "Hyeri Lee is a Creative Director who translates an artist's identity into visual language.",
     designerBio2: "As the founder of THE HEART OF MATTER, she architects cohesive creative systems that span brand strategy, visual identity, album packaging, and content direction — designing every touchpoint where artists meet their world.",
     designerBio3: "Through collaborations with global artists including BTS, Jungkook, RM, and SUGA/Agust D, she has built visual universes that imprint themselves on audiences before a single note is heard.",
-    designerBio4: "Making the invisible visible. That is the essence of THE HEART OF MATTER.",
+    designerBio4: "Where the heart beats, matter is born. Where matter is born, a world opens.",
     aboutLabel: "About Us",
-    aboutTitle: "Fulfilling a need.\nCreating a feeling.",
+    aboutTitle: "Diversity is not chaos.\nOne essence,\nmany surfaces.",
     aboutDesc1: "THE HEART OF MATTER sees each concept as a process of interpretation that expands into diverse experiences.",
     aboutDesc2: "Based on branding strategy, we materialize invisible senses into form, and create unified experiences across every touchpoint where artists and fans meet.",
     aboutDiffLabel: "What Makes Us Different",
@@ -159,9 +161,11 @@ const content = {
     pullQuote: "Making the invisible\nvisible.",
     workLabel: "Selected Work",
     workTitle: "Projects",
+    workSubtitle: "Impact is not volume. It is depth of resonance.",
     workCount: " Projects",
     servicesLabel: "Services",
     servicesTitle: "What We Do",
+    servicesManifesto: "We do not hide behind the artist. We stand beside them.",
     servicesDesc: "We operate an alliance network, collaborating with optimal talent for each project. From brand strategy through visual direction to final delivery, we build cohesive creative systems.",
     methodologyLabel: "Methodology",
     methodologyTitle: "Creative Development",
@@ -241,17 +245,17 @@ const content = {
   },
   ja: {
     heroSubtitle: "クリエイティブ・ディレクション・コレクティブ",
-    heroTagline: "見えない感覚を、形へ。",
-    heroTagline2: "本質を視覚化する、ボーダレスなクリエイティブ。",
+    heroTagline: "私たちは装飾しない。翻訳する。",
+    heroTagline2: "",
     heroCta: "作品を見る",
     designerName: "イ・ヘリ",
     designerTitle: "クリエイティブ・ディレクター · THE HEART OF MATTER 代表",
     designerBio1: "イ・ヘリは、アーティストのアイデンティティをビジュアル言語に翻訳するクリエイティブ・ディレクターです。",
     designerBio2: "THE HEART OF MATTERを率い、ブランド戦略からビジュアル・アイデンティティ、アルバムパッケージ、コンテンツ・クリエイティブに至るまで、アーティストが世界と出会うすべての接点を、一つの凝集した体験として設計します。",
     designerBio3: "BTS、ジョングク、RM、SUGA/Agust Dをはじめとするグローバルアーティストとのコラボレーションを通じて、音楽が始まる前からオーディエンスの記憶に刻まれるビジュアルな世界観を構築してきました。",
-    designerBio4: "見えないものを見えるようにすること。それがTHE HEART OF MATTERの本質です。",
+    designerBio4: "心臓が鼓動する場所に物質が生まれ、物質が生まれた場所に世界が開く。",
     aboutLabel: "About Us",
-    aboutTitle: "必要を満たし、\n感動を創る。",
+    aboutTitle: "多様性は混沌ではない。\n一つの本質が\n様々な表面に現れる現象だ。",
     aboutDesc1: "THE HEART OF MATTERは、一つのコンセプトが多様な体験へと拡張される解釈のプロセスとして捉えます。",
     aboutDesc2: "ブランディング戦略を基盤に、見えない感覚を形に具現化し、アーティストとファンが出会うすべての接点を一つの体験として創り上げていきます。",
     aboutDiffLabel: "私たちの違い",
@@ -260,9 +264,11 @@ const content = {
     pullQuote: "見えないものを\n見えるようにすること。",
     workLabel: "Selected Work",
     workTitle: "プロジェクト",
+    workSubtitle: "インパクトは轟音ではない。共鳴の深さだ。",
     workCount: "件のプロジェクト",
     servicesLabel: "Services",
     servicesTitle: "サービス領域",
+    servicesManifesto: "私たちはアーティストの後ろに隠れない。アーティストの隣に立つ。",
     servicesDesc: "各プロジェクトに最適な人材と協業するアライアンスネットワークを運営しています。ブランド戦略からビジュアルディレクション、最終デリバリーまで、凝集したクリエイティブシステムを構築します。",
     methodologyLabel: "Methodology",
     methodologyTitle: "クリエイティブ開発",
@@ -706,11 +712,11 @@ export default function Home() {
             <div className="flex items-center" style={{gap:'4px'}}>
               {(['ko', 'en', 'ja'] as Lang[]).map((l, i) => (
                 <span key={l} className="flex items-center">
-                  {i > 0 && <span className="lang-sep" style={{margin:'0 3px', fontSize:'9px', color:'#CCC'}}>/</span>}
+                  {i > 0 && <span className="lang-sep" style={{margin:'0 3px', fontSize:'9px', color: scrolled ? '#CCC' : 'rgba(255,255,255,0.3)'}}>/</span>}
                   <button
                     onClick={() => setLang(l)}
                     className={`lang-btn${lang === l ? ' active' : ''}`}
-                    style={{fontSize:'11px', letterSpacing:'0.05em', padding:'4px 2px', minWidth:'20px', color: lang===l ? '#0A0A0A' : '#AAAAAA', fontWeight: lang===l ? 700 : 400}}>
+                    style={{fontSize:'11px', letterSpacing:'0.05em', padding:'4px 2px', minWidth:'20px', color: lang===l ? (scrolled ? '#0A0A0A' : '#FFFFFF') : (scrolled ? '#AAAAAA' : 'rgba(255,255,255,0.45)'), fontWeight: lang===l ? 700 : 400}}>
                     {l === 'ko' ? '한' : l === 'en' ? 'EN' : '日'}
                   </button>
                 </span>
@@ -766,7 +772,7 @@ export default function Home() {
               <span key={l} style={{display:'flex', alignItems:'center', gap:'8px'}}>
                 {i > 0 && <span style={{color:'#DDD', fontSize:'11px'}}>/</span>}
                 <button onClick={() => { setLang(l); setMobileMenuOpen(false); }}
-                  style={{background:'none', border:'none', cursor:'pointer', fontFamily:'var(--font-heading)', fontSize:'13px', letterSpacing:'0.08em', color: lang===l ? '#0A0A0A' : '#AAAAAA', fontWeight: lang===l ? 700 : 400, padding:'4px 2px'}}>
+                  style={{background:'none', border:'none', cursor:'pointer', fontFamily:'var(--font-heading)', fontSize:'13px', letterSpacing:'0.08em', color: lang===l ? (scrolled ? '#0A0A0A' : '#FFFFFF') : (scrolled ? '#AAAAAA' : 'rgba(255,255,255,0.45)'), fontWeight: lang===l ? 700 : 400, padding:'4px 2px'}}>
                   {l === 'ko' ? '한' : l === 'en' ? 'EN' : '日'}
                 </button>
               </span>
@@ -827,7 +833,7 @@ export default function Home() {
 
           <div style={{opacity:0, animation:'fadeInUp 1s ease 0.7s forwards', marginTop:'clamp(32px,6vw,56px)', display:'flex', flexDirection:'column', gap:'16px'}}>
             <p style={{maxWidth:'400px', color:'rgba(255,255,255,0.55)', fontSize:'15px', lineHeight:1.8, fontWeight:300}}>
-              {t.heroTagline}<br />{t.heroTagline2}
+              {t.heroTagline}{t.heroTagline2 && <><br />{t.heroTagline2}</>}
             </p>
             <a href="#work"
               className="group"
@@ -948,6 +954,7 @@ export default function Home() {
             <div className="fade-up">
               <p className="label label-accent mb-4">{t.workLabel}</p>
               <h2 className="heading-impact" style={{fontSize:'clamp(2.5rem,6vw,5rem)', lineHeight:0.95}}>{t.workTitle}</h2>
+              <p className="body-text" style={{marginTop:'16px', fontSize:'15px', color:'#888'}}>{t.workSubtitle}</p>
             </div>
             <p className="hidden md:block project-num fade-up stagger-1">
               {projects.length}{t.workCount}
@@ -1034,6 +1041,15 @@ export default function Home() {
                 marginBottom:'40px',
                 whiteSpace:'pre-line'
               }}>{visionStatement[lang]}</h2>
+              <p className="heading-impact" style={{
+                fontSize:'clamp(1.8rem,4vw,3rem)',
+                lineHeight:1.1,
+                letterSpacing:'0.02em',
+                color:'#0A0A0A',
+                marginBottom:'32px',
+              }}>
+                {lang === 'ko' ? '경계는 없다. 심장이 뛰는 곳에 세계가 있을 뿐이다.' : lang === 'en' ? 'There are no borders. Only worlds where the heart beats.' : '境界はない。心臓が鼓動する場所に世界があるだけだ。'}
+              </p>
               <p className="body-text" style={{fontSize:'16px', lineHeight:'1.9', maxWidth:'680px'}}>{visionDesc[lang]}</p>
             </div>
           </div>
@@ -1087,7 +1103,17 @@ export default function Home() {
               <p className="label label-accent mb-4">{t.servicesLabel}</p>
               <h2 className="heading-impact" style={{fontSize:'clamp(2.5rem,6vw,5rem)',lineHeight:0.95}}>{t.servicesTitle}</h2>
             </div>
-            <div className="md:col-span-7 fade-up stagger-1 flex items-end">
+            <div className="md:col-span-7 fade-up stagger-1 flex flex-col justify-end">
+              <p style={{
+                fontFamily:'var(--font-heading)',
+                fontSize:'13px',
+                letterSpacing:'0.15em',
+                textTransform:'uppercase',
+                color:'#888',
+                marginBottom:'32px',
+                paddingBottom:'24px',
+                borderBottom:'1px solid #EBEBEB',
+              }}>{t.servicesManifesto}</p>
               <p className="body-text max-w-xl">{t.servicesDesc}</p>
             </div>
           </div>
@@ -1231,6 +1257,15 @@ export default function Home() {
                 <div className="pt-4">
                   <p className="label text-white/30">{t.contactLocation}</p>
                 </div>
+                <p style={{
+                  fontSize:'12px',
+                  letterSpacing:'0.15em',
+                  textTransform:'uppercase',
+                  color:'rgba(255,255,255,0.3)',
+                  marginTop:'40px',
+                }}>
+                  {lang === 'ko' ? '여백은 자신감이다.' : lang === 'en' ? 'Negative space is confidence.' : '余白は自信だ。'}
+                </p>
               </div>
             </div>
           </div>
