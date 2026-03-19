@@ -732,7 +732,7 @@ export default function Home() {
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 flex items-center justify-between h-16 md:h-20">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-12 lg:px-20 flex items-center justify-between h-16 md:h-20">
           <a href="#" className="font-heading text-lg tracking-tight font-semibold">
             THOM
           </a>
@@ -807,7 +807,7 @@ export default function Home() {
       </nav>
 
       {/* ─── HERO ─── */}
-      <section className="relative min-h-screen flex flex-col justify-end pb-16 md:pb-24 px-6 md:px-16 lg:px-24 overflow-hidden">
+      <section className="relative min-h-screen flex flex-col justify-end pb-16 md:pb-24 px-5 md:px-12 lg:px-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/img_008_48.jpeg"
@@ -817,9 +817,9 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="relative z-10 max-w-[1400px] mx-auto w-full text-white">
+        <div className="relative z-10 max-w-[1200px] mx-auto w-full text-white">
           <div className="fade-in-up">
-            <p className="text-xs tracking-[0.3em] uppercase text-white/60 mb-4 md:mb-6">
+            <p className="text-[10px] tracking-[0.3em] uppercase text-white/60 mb-4 md:mb-6">
               {t.heroSubtitle}
             </p>
           </div>
@@ -832,7 +832,7 @@ export default function Home() {
             </span>
           </h1>
           <div className="fade-in-up stagger-2 mt-6 md:mt-8 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <p className="max-w-md text-white/70 text-base md:text-lg leading-relaxed font-light">
+            <p className="max-w-md text-white/70 text-sm md:text-base leading-relaxed font-light">
               {t.heroTagline}
               <br />
               {t.heroTagline2}
@@ -854,15 +854,15 @@ export default function Home() {
       </section>
 
       {/* ─── DESIGNER PROFILE ─── */}
-      <section className="py-24 md:py-40 px-6 md:px-16 lg:px-24 bg-white">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
+      <section className="py-16 md:py-28 px-5 md:px-12 lg:px-20 bg-white">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
             {/* Left: Name & Title */}
             <div className="md:col-span-4 fade-in-up">
-              <p className="text-xs tracking-[0.3em] uppercase text-[#E85D4A] mb-6">
+              <p className="text-[10px] tracking-[0.3em] uppercase text-[#E85D4A] mb-4">
                 Creative Director
               </p>
-              <h2 className="font-heading text-4xl md:text-6xl tracking-tight leading-[1.1] mb-4">
+              <h2 className="font-heading text-2xl md:text-5xl tracking-tight leading-[1.1] mb-3">
                 {t.designerName}
               </h2>
               <p className="text-sm text-[#6B6B6B] leading-relaxed tracking-wide">
@@ -871,24 +871,24 @@ export default function Home() {
             </div>
             {/* Right: Bio */}
             <div className="md:col-span-8 fade-in-up stagger-2">
-              <div className="space-y-6 text-[#6B6B6B] text-base md:text-lg leading-loose">
-                <p className="text-[#0A0A0A] font-light text-lg md:text-xl leading-relaxed">
+              <div className="space-y-4 text-[#6B6B6B] text-sm md:text-base leading-relaxed max-w-2xl">
+                <p className="text-[#0A0A0A] font-light text-sm md:text-base leading-relaxed">
                   {t.designerBio1}
                 </p>
-                <p className="leading-loose">{t.designerBio2}</p>
-                <p className="leading-loose">{t.designerBio3}</p>
-                <p className="text-[#0A0A0A] font-medium text-base md:text-lg italic leading-relaxed mt-8">
+                <p>{t.designerBio2}</p>
+                <p>{t.designerBio3}</p>
+                <p className="text-[#0A0A0A] font-medium text-sm md:text-base italic leading-relaxed mt-6">
                   {t.designerBio4}
                 </p>
               </div>
             </div>
           </div>
           {/* Tags */}
-          <div className="mt-16 flex flex-wrap gap-3 fade-in-up stagger-3">
+          <div className="mt-10 flex flex-wrap gap-2 fade-in-up stagger-3">
             {designerTags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs tracking-[0.15em] uppercase border border-[#E0E0E0] px-4 py-2 text-[#6B6B6B] hover:border-[#0A0A0A] hover:text-[#0A0A0A] transition-colors"
+                className="text-[10px] tracking-[0.12em] uppercase bg-[#F5F5F5] text-[#6B6B6B] px-3 py-1 rounded-sm font-medium"
               >
                 {tag}
               </span>
@@ -898,19 +898,19 @@ export default function Home() {
       </section>
 
       {/* ─── ABOUT ─── */}
-      <section id="about" className="py-24 md:py-40 px-6 md:px-16 lg:px-24">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-24">
+      <section id="about" className="py-16 md:py-28 px-5 md:px-12 lg:px-20">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
             <div className="md:col-span-5 fade-in-up">
-              <p className="text-xs tracking-[0.3em] uppercase text-[#E85D4A] mb-6">
+              <p className="text-[10px] tracking-[0.3em] uppercase text-[#E85D4A] mb-4">
                 {t.aboutLabel}
               </p>
-              <h2 className="font-heading text-3xl md:text-5xl leading-tight tracking-tight whitespace-pre-line">
+              <h2 className="font-heading text-2xl md:text-4xl leading-tight tracking-tight whitespace-pre-line">
                 {t.aboutTitle}
               </h2>
             </div>
             <div className="md:col-span-7 fade-in-up stagger-2">
-              <div className="space-y-6 text-[#6B6B6B] text-base md:text-lg leading-loose">
+              <div className="space-y-4 text-[#6B6B6B] text-sm md:text-base leading-relaxed max-w-2xl">
                 <p className="font-light">{t.aboutDesc1}</p>
                 <p>{t.aboutDesc2}</p>
               </div>
@@ -918,7 +918,7 @@ export default function Home() {
           </div>
 
           {/* About Gallery */}
-          <div className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-4 fade-in-up stagger-3">
+          <div className="mt-10 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-4 fade-in-up stagger-3">
             {aboutGallery.map((img, i) => (
               <div key={i} className="relative aspect-[4/3] rounded-sm overflow-hidden img-hover">
                 <Image
@@ -933,15 +933,15 @@ export default function Home() {
           </div>
 
           {/* What Makes Us Different */}
-          <div className="mt-20 md:mt-32 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-24">
+          <div className="mt-14 md:mt-24 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
             <div className="md:col-span-4 fade-in-up">
-              <p className="text-xs tracking-[0.3em] uppercase text-[#E85D4A] mb-4">
+              <p className="text-[10px] tracking-[0.3em] uppercase text-[#E85D4A] mb-4">
                 {t.aboutDiffLabel}
               </p>
               <h3 className="font-heading text-2xl md:text-3xl leading-tight tracking-tight mb-6 whitespace-pre-line">
                 {t.aboutDiffTitle}
               </h3>
-              <p className="text-sm text-[#6B6B6B] leading-loose">
+              <p className="text-sm text-[#6B6B6B] leading-relaxed max-w-xl">
                 {t.aboutDiffDesc}
               </p>
             </div>
@@ -977,14 +977,14 @@ export default function Home() {
       </section>
 
       {/* ─── SELECTED WORK ─── */}
-      <section id="work" className="py-24 md:py-40 bg-[#F5F5F5]">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24">
-          <div className="flex items-end justify-between mb-16 md:mb-24">
+      <section id="work" className="py-16 md:py-28 bg-[#F5F5F5]">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-12 lg:px-20">
+          <div className="flex items-end justify-between mb-10 md:mb-16">
             <div className="fade-in-up">
-              <p className="text-xs tracking-[0.3em] uppercase text-[#E85D4A] mb-4">
+              <p className="text-[10px] tracking-[0.3em] uppercase text-[#E85D4A] mb-4">
                 {t.workLabel}
               </p>
-              <h2 className="font-heading text-3xl md:text-5xl tracking-tight">
+              <h2 className="font-heading text-2xl md:text-4xl tracking-tight">
                 {t.workTitle}
               </h2>
             </div>
@@ -993,16 +993,16 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="space-y-24 md:space-y-40">
+          <div className="space-y-16 md:space-y-28">
             {projects.map((project, idx) => (
               <div key={project.id} className="fade-in-up">
                 {/* Project Header */}
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-4">
                   <div>
                     <p className="text-xs tracking-[0.2em] uppercase text-[#6B6B6B] mb-2">
                       {project.artist}
                     </p>
-                    <h3 className="font-heading text-3xl md:text-6xl tracking-tight">
+                    <h3 className="font-heading text-2xl md:text-5xl tracking-tight">
                       {project.title}
                     </h3>
                     <p className="text-sm text-[#6B6B6B] mt-2">{project.subtitle}</p>
@@ -1038,7 +1038,7 @@ export default function Home() {
                   {project.category.split(" / ").map((cat) => (
                     <span
                       key={cat}
-                      className="text-xs tracking-[0.15em] uppercase border border-[#E0E0E0] px-3 py-1.5 text-[#6B6B6B]"
+                      className="text-[10px] tracking-[0.12em] uppercase bg-[#F5F5F5] text-[#6B6B6B] px-3 py-1 rounded-sm font-medium"
                     >
                       {cat}
                     </span>
@@ -1047,8 +1047,8 @@ export default function Home() {
 
                 {/* Expanded Details */}
                 {activeProject === project.id && (
-                  <div className="mt-8 md:mt-12 space-y-8 animate-[fadeIn_0.5s_ease]">
-                    <p className="max-w-2xl text-[#6B6B6B] leading-loose">
+                  <div className="mt-6 md:mt-10 space-y-6 animate-[fadeIn_0.5s_ease]">
+                    <p className="max-w-2xl text-sm md:text-base text-[#6B6B6B] leading-relaxed">
                       {t.projectDescriptions[project.id as keyof typeof t.projectDescriptions]}
                     </p>
                     <div className="grid grid-cols-2 gap-2 md:gap-4">
@@ -1076,31 +1076,31 @@ export default function Home() {
       </section>
 
       {/* ─── SERVICES ─── */}
-      <section id="services" className="py-24 md:py-40 px-6 md:px-16 lg:px-24">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16 md:mb-24">
+      <section id="services" className="py-16 md:py-28 px-5 md:px-12 lg:px-20">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-10 md:mb-16">
             <div className="md:col-span-5 fade-in-up">
-              <p className="text-xs tracking-[0.3em] uppercase text-[#E85D4A] mb-4">
+              <p className="text-[10px] tracking-[0.3em] uppercase text-[#E85D4A] mb-4">
                 {t.servicesLabel}
               </p>
-              <h2 className="font-heading text-3xl md:text-5xl tracking-tight">
+              <h2 className="font-heading text-2xl md:text-4xl tracking-tight">
                 {t.servicesTitle}
               </h2>
             </div>
             <div className="md:col-span-7 fade-in-up stagger-1">
-              <p className="text-[#6B6B6B] leading-loose max-w-xl">
+              <p className="text-sm md:text-base text-[#6B6B6B] leading-relaxed max-w-xl">
                 {t.servicesDesc}
               </p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-4">
             {t.services.map((service, idx) => (
               <div
                 key={service.title}
-                className={`fade-in-up stagger-${idx + 1} bg-white border border-[#E0E0E0] p-8 md:p-10`}
+                className={`fade-in-up stagger-${idx + 1} bg-white border border-[#F0F0F0] p-6 md:p-8 rounded-sm`}
               >
-                <div className="flex items-start justify-between mb-8">
+                <div className="flex items-start justify-between mb-6">
                   <h3 className="font-heading text-xl tracking-tight font-medium">{service.title}</h3>
                   <span className="text-xs text-[#E85D4A]">
                     {String(idx + 1).padStart(2, "0")}
@@ -1124,13 +1124,13 @@ export default function Home() {
       </section>
 
       {/* ─── METHODOLOGY ─── */}
-      <section className="py-24 md:py-40 px-6 md:px-16 lg:px-24 bg-[#0A0A0A] text-white">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="mb-16 md:mb-24 fade-in-up">
-            <p className="text-xs tracking-[0.3em] uppercase text-[#E85D4A] mb-4">
+      <section className="py-16 md:py-28 px-5 md:px-12 lg:px-20 bg-[#0A0A0A] text-white">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="mb-10 md:mb-16 fade-in-up">
+            <p className="text-[10px] tracking-[0.3em] uppercase text-[#E85D4A] mb-4">
               {t.methodologyLabel}
             </p>
-            <h2 className="font-heading text-3xl md:text-5xl tracking-tight">
+            <h2 className="font-heading text-2xl md:text-4xl tracking-tight">
               {t.methodologyTitle}
             </h2>
           </div>
@@ -1140,13 +1140,13 @@ export default function Home() {
               <div key={item.step} className={`fade-in-up stagger-${idx + 1}`}>
                 <span className="text-[#E85D4A] text-xs tracking-[0.2em]">{item.step}</span>
                 <h4 className="font-heading text-lg mt-3 mb-3 font-medium">{item.title}</h4>
-                <p className="text-sm text-white/70 leading-loose">{item.desc}</p>
+                <p className="text-sm text-white/70 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
 
           {/* Methodology visual strip */}
-          <div className="mt-16 md:mt-24 grid grid-cols-2 md:grid-cols-4 gap-2 fade-in-up">
+          <div className="mt-10 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-2 fade-in-up">
             {["/images/img_008_12.jpeg", "/images/img_008_23.png", "/images/img_008_56.jpeg", "/images/img_008_65.jpeg"].map((img, i) => (
               <div key={i} className="relative aspect-[4/3] rounded-sm overflow-hidden">
                 <Image src={img} alt={`Method ${i + 1}`} fill className="object-cover opacity-60" sizes="350px" />
@@ -1157,27 +1157,27 @@ export default function Home() {
       </section>
 
       {/* ─── PROCESS ─── */}
-      <section id="process" className="py-24 md:py-40 px-6 md:px-16 lg:px-24">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="mb-16 md:mb-24 fade-in-up">
-            <p className="text-xs tracking-[0.3em] uppercase text-[#E85D4A] mb-4">
+      <section id="process" className="py-16 md:py-28 px-5 md:px-12 lg:px-20">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="mb-10 md:mb-16 fade-in-up">
+            <p className="text-[10px] tracking-[0.3em] uppercase text-[#E85D4A] mb-4">
               {t.processLabel}
             </p>
-            <h2 className="font-heading text-3xl md:text-5xl tracking-tight">
+            <h2 className="font-heading text-2xl md:text-4xl tracking-tight">
               {t.processTitle}
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
             {t.processPhases.map((phase, pi) => (
               <div key={phase.phase} className={`fade-in-up stagger-${pi + 1}`}>
-                <div className="flex items-center gap-4 mb-8">
+                <div className="flex items-center gap-4 mb-6">
                   <span className="text-xs tracking-[0.2em] text-[#E85D4A]">
                     {phase.phase}
                   </span>
                   <div className="flex-1 h-px bg-[#E0E0E0]" />
                 </div>
-                <h3 className="font-heading text-2xl mb-8">{phase.title}</h3>
+                <h3 className="font-heading text-2xl mb-6">{phase.title}</h3>
                 <div className="space-y-6">
                   {phase.steps.map((step, si) => (
                     <div key={step} className="flex items-start gap-4 group">
@@ -1195,7 +1195,7 @@ export default function Home() {
           </div>
 
           {/* Process Image */}
-          <div className="mt-16 md:mt-24 fade-in-up">
+          <div className="mt-10 md:mt-16 fade-in-up">
             <div className="relative aspect-[21/9] rounded-sm overflow-hidden img-hover">
               <Image
                 src="/images/img_008_49.jpeg"
@@ -1209,19 +1209,19 @@ export default function Home() {
       </section>
 
       {/* ─── ALLIANCE ─── */}
-      <section className="py-24 md:py-40 px-6 md:px-16 lg:px-24 bg-[#F5F5F5]">
-        <div className="max-w-[1400px] mx-auto">
+      <section className="py-16 md:py-28 px-5 md:px-12 lg:px-20 bg-[#F5F5F5]">
+        <div className="max-w-[1200px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
             <div className="md:col-span-5 fade-in-up">
-              <p className="text-xs tracking-[0.3em] uppercase text-[#E85D4A] mb-4">
+              <p className="text-[10px] tracking-[0.3em] uppercase text-[#E85D4A] mb-4">
                 {t.allianceLabel}
               </p>
-              <h2 className="font-heading text-3xl md:text-5xl tracking-tight">
+              <h2 className="font-heading text-2xl md:text-4xl tracking-tight">
                 {t.allianceTitle}
               </h2>
             </div>
             <div className="md:col-span-7 fade-in-up stagger-1">
-              <p className="text-[#6B6B6B] leading-loose mb-12">
+              <p className="text-sm md:text-base text-[#6B6B6B] leading-relaxed mb-8">
                 {t.allianceDesc}
               </p>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-6">
@@ -1238,7 +1238,7 @@ export default function Home() {
       </section>
 
       {/* ─── CONTACT ─── */}
-      <section id="contact" className="relative py-24 md:py-40 px-6 md:px-16 lg:px-24 bg-[#0A0A0A] text-white overflow-hidden">
+      <section id="contact" className="relative py-16 md:py-28 px-5 md:px-12 lg:px-20 bg-[#0A0A0A] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/img_008_00.jpeg"
@@ -1247,13 +1247,13 @@ export default function Home() {
             className="object-cover opacity-[0.06]"
           />
         </div>
-        <div className="relative z-10 max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
+        <div className="relative z-10 max-w-[1200px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
             <div className="md:col-span-7 fade-in-up">
-              <p className="text-xs tracking-[0.3em] uppercase text-[#E85D4A] mb-6">
+              <p className="text-[10px] tracking-[0.3em] uppercase text-[#E85D4A] mb-4">
                 {t.contactLabel}
               </p>
-              <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl tracking-tight leading-[1.1] whitespace-pre-line">
+              <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl tracking-tight leading-[1.1] whitespace-pre-line">
                 {t.contactTitle}
               </h2>
             </div>
@@ -1299,8 +1299,8 @@ export default function Home() {
       </section>
 
       {/* ─── FOOTER ─── */}
-      <footer className="py-8 px-6 md:px-16 lg:px-24 bg-[#0A0A0A] text-white border-t border-white/10">
-        <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <footer className="py-8 px-5 md:px-12 lg:px-20 bg-[#0A0A0A] text-white border-t border-white/10">
+        <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/30 tracking-[0.1em]">
             {t.footerCopy}
           </p>
