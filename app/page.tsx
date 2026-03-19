@@ -928,7 +928,7 @@ export default function Home() {
             {projects.map((project, idx) => (
               <div key={project.id} className="mb-20 md:mb-32 fade-up">
                 {/* Rule */}
-                <div className="rule mb-8 md:mb-10" />
+                <div className="rule" style={{margin:'0 0 40px 0'}} />
 
                 {/* Project header */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-10 gap-4">

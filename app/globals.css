@@ -11,7 +11,7 @@
 
 @theme inline {
   --font-display: var(--font-dm-serif), Georgia, serif;
-  --font-heading: var(--font-outfit), "Helvetica Neue", sans-serif;
+  --font-heading: var(--font-syne), var(--font-outfit), "Helvetica Neue", sans-serif;
   --font-sans: var(--font-dm-sans), "Helvetica Neue", sans-serif;
   --font-impact: var(--font-bebas), "Arial Black", sans-serif;
 }
@@ -46,8 +46,8 @@ body {
 @media (min-width: 768px) { .section-sm { padding: 100px 0; } }
 
 /* ─── Editorial rule lines ─── */
-.rule { width: 100%; height: 1px; background: var(--rule); }
-.rule-dark { width: 100%; height: 2px; background: var(--ink); }
+.rule { width: 100%; height: 1px; background: var(--rule); margin-top: 32px; margin-bottom: 32px; }
+.rule-dark { width: 100%; height: 2px; background: var(--ink); margin-top: 0; margin-bottom: 40px; }
 
 /* ─── Labels ─── */
 .label {
@@ -71,20 +71,21 @@ body {
   letter-spacing: 0.02em;
 }
 
-/* ─── Heading ─── */
+/* ─── Heading (섹션 타이틀 — Syne 800) ─── */
 .heading {
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.05;
 }
 
-/* ─── Impact heading (Bebas Neue) ─── */
+/* ─── Impact heading (Hero — Barlow Condensed 800) ─── */
 .heading-impact {
   font-family: var(--font-impact);
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  line-height: 0.92;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 0.9;
+  text-transform: uppercase;
 }
 
 /* ─── Body text ─── */
