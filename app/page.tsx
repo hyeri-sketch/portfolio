@@ -1038,15 +1038,16 @@ export default function Home() {
                 lineHeight:0.95,
                 letterSpacing:'0.02em',
                 color:'#0A0A0A',
-                marginBottom:'40px',
+                marginBottom:'56px',
                 whiteSpace:'pre-line'
               }}>{visionStatement[lang]}</h2>
               <p className="heading-impact" style={{
-                fontSize:'clamp(1.8rem,4vw,3rem)',
-                lineHeight:1.1,
-                letterSpacing:'0.02em',
-                color:'#0A0A0A',
-                marginBottom:'32px',
+                fontSize:'clamp(1.4rem,3vw,2rem)',
+                lineHeight:1.2,
+                letterSpacing:'0.01em',
+                color:'#444',
+                marginBottom:'48px',
+                fontWeight:700,
               }}>
                 {lang === 'ko' ? '경계는 없다. 심장이 뛰는 곳에 세계가 있을 뿐이다.' : lang === 'en' ? 'There are no borders. Only worlds where the heart beats.' : '境界はない。心臓が鼓動する場所に世界があるだけだ。'}
               </p>
