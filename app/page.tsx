@@ -786,17 +786,22 @@ export default function Home() {
         {/* Background image */}
         <div className="absolute inset-0 z-0">
           <Image src="/images/img_008_48.jpeg" alt="THE HEART OF MATTER" fill
-            className="object-cover brightness-[0.12] hero-bg-reveal" priority />
+            className="object-cover brightness-[0.35] hero-bg-reveal" priority />
         </div>
 
-        {/* Gradient overlay — 하단에서 올라오는 그라데이션 */}
-        <div className="absolute inset-0 z-1 pointer-events-none" style={{
-          background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0) 70%)',
+        {/* 전체 다크 베이스 오버레이 */}
+        <div className="absolute inset-0 pointer-events-none" style={{zIndex:1, background:'rgba(0,0,0,0.55)'}} />
+
+        {/* 하단에서 올라오는 그라데이션 — 텍스트 가독성 */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          zIndex:2,
+          background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 45%, rgba(0,0,0,0.1) 70%, rgba(0,0,0,0) 100%)',
         }} />
 
-        {/* Subtle color vignette — 코너 다크 효과 */}
-        <div className="absolute inset-0 z-1 pointer-events-none" style={{
-          background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.4) 100%)',
+        {/* 비네트 */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          zIndex:2,
+          background: 'radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.5) 100%)',
         }} />
 
         {/* 떠다니는 빛 입자 */}
