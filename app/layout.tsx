@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Asta_Sans, DM_Serif_Display, Outfit, Comfortaa, Syne } from "next/font/google";
+import { Chiron_Hei_HK, DM_Serif_Display, Outfit, Comfortaa, Syne } from "next/font/google";
 import "./globals.css";
 
-const dmSans = Asta_Sans({
+const dmSans = Chiron_Hei_HK({
   subsets: ["latin"],
   variable: "--font-dm-sans",
   weight: ["400"],
