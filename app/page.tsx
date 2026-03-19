@@ -675,7 +675,7 @@ export default function Home() {
             <span style={{
               fontFamily:'var(--font-comfortaa), sans-serif',
               fontWeight:700,
-              fontSize:'13px',
+              fontSize:'var(--fs-2)',
               letterSpacing:'0.12em',
               lineHeight:1.2,
               textTransform:'uppercase',
@@ -713,7 +713,7 @@ export default function Home() {
             <div className="flex items-center" style={{gap:'4px'}}>
               {(['ko', 'en', 'ja'] as Lang[]).map((l, i) => (
                 <span key={l} className="flex items-center">
-                  {i > 0 && <span className="lang-sep" style={{margin:'0 3px', fontSize:'9px', color: scrolled ? '#CCC' : 'rgba(255,255,255,0.3)'}}>/</span>}
+                  {i > 0 && <span className="lang-sep" style={{margin:'0 3px', fontSize:'var(--fs-1)', color: scrolled ? '#CCC' : 'rgba(255,255,255,0.3)'}}>/</span>}
                   <button
                     onClick={() => setLang(l)}
                     className={`lang-btn${lang === l ? ' active' : ''}`}
@@ -753,7 +753,7 @@ export default function Home() {
             <span style={{
               fontFamily:'var(--font-comfortaa), sans-serif',
               fontWeight:700,
-              fontSize:'13px',
+              fontSize:'var(--fs-2)',
               letterSpacing:'0.12em',
               textTransform:'uppercase',
               whiteSpace:'nowrap',
@@ -773,7 +773,7 @@ export default function Home() {
           {/* 메뉴 링크 */}
           {navLinks.map(link => (
             <a key={link.label} href={link.href} onClick={() => setMobileMenuOpen(false)}
-              style={{fontFamily:'var(--font-comfortaa), sans-serif', fontSize:'28px', letterSpacing:'0.05em', color:'#0A0A0A', textDecoration:'none', fontWeight:700, lineHeight:1, textTransform:'uppercase'}}>
+              style={{fontFamily:'var(--font-comfortaa), sans-serif', fontSize:'var(--fs-4)', letterSpacing:'0.05em', color:'#0A0A0A', textDecoration:'none', fontWeight:700, lineHeight:1, textTransform:'uppercase'}}>
               {link.label}
             </a>
           ))}
@@ -783,7 +783,7 @@ export default function Home() {
               <span key={l} style={{display:'flex', alignItems:'center', gap:'8px'}}>
                 {i > 0 && <span style={{color:'#DDD', fontSize:'11px'}}>/</span>}
                 <button onClick={() => { setLang(l); setMobileMenuOpen(false); }}
-                  style={{background:'none', border:'none', cursor:'pointer', fontFamily:'var(--font-heading)', fontSize:'13px', letterSpacing:'0.08em', color: lang===l ? (scrolled ? '#0A0A0A' : '#FFFFFF') : (scrolled ? '#AAAAAA' : 'rgba(255,255,255,0.45)'), fontWeight: lang===l ? 700 : 400, padding:'4px 2px'}}>
+                  style={{background:'none', border:'none', cursor:'pointer', fontFamily:'var(--font-heading)', fontSize:'var(--fs-2)', letterSpacing:'0.08em', color: lang===l ? (scrolled ? '#0A0A0A' : '#FFFFFF') : (scrolled ? '#AAAAAA' : 'rgba(255,255,255,0.45)'), fontWeight: lang===l ? 700 : 400, padding:'4px 2px'}}>
                   {l === 'ko' ? '한' : l === 'en' ? 'EN' : '日'}
                 </button>
               </span>
@@ -857,7 +857,7 @@ export default function Home() {
         {/* Hero content */}
         <div className="relative z-10 container" style={{paddingBottom: 'clamp(60px, 12vw, 120px)'}}>
           <div className="hero-label-reveal">
-            <p className="label" style={{color:'rgba(255,255,255,0.5)', marginBottom:'24px', fontSize:'12px'}}>{t.heroSubtitle}</p>
+            <p className="label" style={{color:'rgba(255,255,255,0.5)', marginBottom:'24px', fontSize:'var(--fs-1)'}}>{t.heroSubtitle}</p>
           </div>
           <h1 style={{textShadow:'0 0 80px rgba(255,255,255,0.08), 0 0 160px rgba(255,255,255,0.04)'}}>
             <span className="hero-text-wrap">
@@ -866,7 +866,7 @@ export default function Home() {
                 fontFamily:'var(--font-comfortaa), sans-serif',
                 fontStyle:'normal',
                 fontWeight:400,
-                fontSize:'clamp(4.5rem,13vw,12rem)',
+                fontSize:'var(--fs-7)',
                 lineHeight:1.0,
                 letterSpacing:'0.02em',
                 color:'#fff',
@@ -879,7 +879,7 @@ export default function Home() {
                 fontFamily:'var(--font-comfortaa), sans-serif',
                 fontStyle:'normal',
                 fontWeight:400,
-                fontSize:'clamp(4.5rem,13vw,12rem)',
+                fontSize:'var(--fs-7)',
                 lineHeight:1.0,
                 letterSpacing:'0.06em',
                 color:'#fff',
@@ -891,12 +891,12 @@ export default function Home() {
           </h1>
 
           <div className="hero-tagline-reveal" style={{marginTop:'clamp(32px,6vw,56px)', display:'flex', flexDirection:'column', gap:'16px'}}>
-            <p className="hero-color-shift-subtle" style={{maxWidth:'400px', color:'rgba(255,255,255,0.55)', fontSize:'15px', lineHeight:1.8, fontWeight:300}}>
+            <p className="hero-color-shift-subtle" style={{maxWidth:'400px', color:'rgba(255,255,255,0.55)', fontSize:'var(--fs-3)', lineHeight:1.8, fontWeight:300}}>
               {t.heroTagline}{t.heroTagline2 && <><br />{t.heroTagline2}</>}
             </p>
             <a href="#work"
               className="group"
-              style={{display:'inline-flex', alignItems:'center', gap:'8px', fontFamily:'var(--font-heading)', fontSize:'10px', letterSpacing:'0.25em', textTransform:'uppercase', color:'#fff', borderBottom:'1px solid rgba(255,255,255,0.3)', paddingBottom:'6px', alignSelf:'flex-start', textDecoration:'none', transition:'border-color 0.2s'}}>
+              style={{display:'inline-flex', alignItems:'center', gap:'8px', fontFamily:'var(--font-heading)', fontSize:'var(--fs-1)', letterSpacing:'0.25em', textTransform:'uppercase', color:'#fff', borderBottom:'1px solid rgba(255,255,255,0.3)', paddingBottom:'6px', alignSelf:'flex-start', textDecoration:'none', transition:'border-color 0.2s'}}>
               {t.heroCta}
               <span style={{transition:'transform 0.2s'}}><IconArrowUpRight /></span>
             </a>
@@ -938,10 +938,10 @@ export default function Home() {
             {/* Right column — bio */}
             <div className="md:col-span-8 fade-up stagger-1">
               <div className="max-w-2xl" style={{display:'flex', flexDirection:'column', gap:'20px'}}>
-                <p className="body-text" style={{fontSize:'16px', lineHeight:'1.9', color:'#333', fontWeight:'300'}}>{t.designerBio1}</p>
-                <p className="body-text" style={{fontSize:'16px', lineHeight:'1.9', color:'#444', fontWeight:'300'}}>{t.designerBio2}</p>
-                <p className="body-text" style={{fontSize:'16px', lineHeight:'1.9', color:'#444', fontWeight:'300'}}>{t.designerBio3}</p>
-                <p className="pull-quote" style={{fontSize:'17px', lineHeight:'1.8', color:'#0A0A0A', fontWeight:'600', fontStyle:'normal', marginTop:'12px', paddingTop:'20px', borderTop:'1px solid #EBEBEB'}}>{t.designerBio4}</p>
+                <p className="body-text" style={{fontSize:'var(--fs-3)', lineHeight:'1.9', color:'#333', fontWeight:'300'}}>{t.designerBio1}</p>
+                <p className="body-text" style={{fontSize:'var(--fs-3)', lineHeight:'1.9', color:'#444', fontWeight:'300'}}>{t.designerBio2}</p>
+                <p className="body-text" style={{fontSize:'var(--fs-3)', lineHeight:'1.9', color:'#444', fontWeight:'300'}}>{t.designerBio3}</p>
+                <p className="pull-quote" style={{fontSize:'var(--fs-3)', lineHeight:'1.8', color:'#0A0A0A', fontWeight:'600', fontStyle:'normal', marginTop:'12px', paddingTop:'20px', borderTop:'1px solid #EBEBEB'}}>{t.designerBio4}</p>
               </div>
             </div>
           </div>
@@ -963,7 +963,7 @@ export default function Home() {
             <div className="fade-up">
               <p className="label label-accent" style={{marginBottom:'16px'}}>{t.aboutLabel}</p>
               <h2 className="heading-impact whitespace-pre-line" style={{
-                fontSize:'clamp(2.8rem, 7vw, 5.5rem)',
+                fontSize:'var(--fs-6)',
                 color:'#0A0A0A',
                 lineHeight:1.0,
                 letterSpacing:'0.02em',
@@ -972,10 +972,10 @@ export default function Home() {
               </h2>
             </div>
             <div className="fade-up stagger-1 flex flex-col justify-end">
-              <h3 className="heading whitespace-pre-line" style={{fontSize:'clamp(1.5rem, 3.5vw, 2.2rem)', marginBottom:'28px', lineHeight:1.35}}>{t.aboutTitle}</h3>
+              <h3 className="heading whitespace-pre-line" style={{fontSize:'var(--fs-5)', marginBottom:'28px', lineHeight:1.35}}>{t.aboutTitle}</h3>
               <div style={{display:'flex', flexDirection:'column', gap:'20px'}}>
-                <p className="body-text" style={{fontSize:'16px', lineHeight:'1.85'}}>{t.aboutDesc1}</p>
-                <p className="body-text" style={{fontSize:'16px', lineHeight:'1.85'}}>{t.aboutDesc2}</p>
+                <p className="body-text" style={{fontSize:'var(--fs-3)', lineHeight:'1.85'}}>{t.aboutDesc1}</p>
+                <p className="body-text" style={{fontSize:'var(--fs-3)', lineHeight:'1.85'}}>{t.aboutDesc2}</p>
               </div>
             </div>
           </div>
@@ -992,9 +992,9 @@ export default function Home() {
           {/* What Makes Us Different */}
           <div style={{marginTop:'100px'}} className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
             <div className="md:col-span-4 fade-up">
-              <p className="label label-accent" style={{fontSize:'13px', marginBottom:'16px'}}>{t.aboutDiffLabel}</p>
-              <h3 className="heading whitespace-pre-line" style={{fontSize:'clamp(1.5rem, 3.5vw, 2.2rem)', marginBottom:'24px', lineHeight:1.35, marginTop:'4px'}}>{t.aboutDiffTitle}</h3>
-              <p className="body-text max-w-xl" style={{fontSize:'18px', lineHeight:'1.85'}}>{t.aboutDiffDesc}</p>
+              <p className="label label-accent" style={{fontSize:'var(--fs-2)', marginBottom:'16px'}}>{t.aboutDiffLabel}</p>
+              <h3 className="heading whitespace-pre-line" style={{fontSize:'var(--fs-5)', marginBottom:'24px', lineHeight:1.35, marginTop:'4px'}}>{t.aboutDiffTitle}</h3>
+              <p className="body-text max-w-xl" style={{fontSize:'var(--fs-3)', lineHeight:'1.85'}}>{t.aboutDiffDesc}</p>
             </div>
             <div className="md:col-span-8 fade-up stagger-1" style={{marginTop:'0px'}}>
               <div className="relative aspect-[16/9] overflow-hidden img-cover">
@@ -1024,8 +1024,8 @@ export default function Home() {
           <div className="flex items-end justify-between" style={{marginBottom:'64px'}}>
             <div className="fade-up">
               <p className="label label-accent" style={{marginBottom:'16px'}}>{t.workLabel}</p>
-              <h2 className="heading-impact" style={{fontSize:'clamp(2.5rem,6vw,5rem)', lineHeight:1.05}}>{t.workTitle}</h2>
-              <p className="body-text" style={{marginTop:'16px', fontSize:'15px', color:'#888'}}>{t.workSubtitle}</p>
+              <h2 className="heading-impact" style={{fontSize:'var(--fs-6)', lineHeight:1.05}}>{t.workTitle}</h2>
+              <p className="body-text" style={{marginTop:'16px', fontSize:'var(--fs-3)', color:'#888'}}>{t.workSubtitle}</p>
             </div>
             <p className="hidden md:block project-num fade-up stagger-1">
               {projects.length}{t.workCount}
@@ -1043,8 +1043,8 @@ export default function Home() {
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-4" style={{marginBottom:'40px'}}>
                   <div>
                     <p className="label" style={{marginBottom:'16px'}}>{project.artist}</p>
-                    <h3 className="heading-impact" style={{fontSize:'clamp(2.5rem,8vw,7rem)',lineHeight:1.05}}>{project.title}</h3>
-                    <p className="body-text" style={{marginTop:'10px', fontSize:'15px'}}>{project.subtitle}</p>
+                    <h3 className="heading-impact" style={{fontSize:'var(--fs-6)',lineHeight:1.05}}>{project.title}</h3>
+                    <p className="body-text" style={{marginTop:'10px', fontSize:'var(--fs-3)'}}>{project.subtitle}</p>
                   </div>
                   <span className="project-num">
                     {String(idx + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}
@@ -1106,7 +1106,7 @@ export default function Home() {
             </div>
             <div className="md:col-span-10">
               <h2 className="heading-impact" style={{
-                fontSize:'clamp(2.8rem, 7vw, 6rem)',
+                fontSize:'var(--fs-6)',
                 lineHeight:1.05,
                 letterSpacing:'0.02em',
                 color:'#0A0A0A',
@@ -1114,7 +1114,7 @@ export default function Home() {
                 whiteSpace:'pre-line'
               }}>{visionStatement[lang]}</h2>
               <p className="heading-impact" style={{
-                fontSize:'clamp(1.4rem,3vw,2rem)',
+                fontSize:'var(--fs-4)',
                 lineHeight:1.2,
                 letterSpacing:'0.01em',
                 color:'#444',
@@ -1123,7 +1123,7 @@ export default function Home() {
               }}>
                 {lang === 'ko' ? '경계는 없다. 심장이 뛰는 곳에 세계가 있을 뿐이다.' : lang === 'en' ? 'There are no borders. Only worlds where the heart beats.' : '境界はない。心臓が鼓動する場所に世界があるだけだ。'}
               </p>
-              <p className="body-text" style={{fontSize:'16px', lineHeight:'1.9', maxWidth:'680px'}}>{visionDesc[lang]}</p>
+              <p className="body-text" style={{fontSize:'var(--fs-3)', lineHeight:'1.9', maxWidth:'680px'}}>{visionDesc[lang]}</p>
             </div>
           </div>
 
@@ -1143,20 +1143,20 @@ export default function Home() {
                 <span style={{
                   display:'block',
                   fontFamily:'var(--font-heading)',
-                  fontSize:'10px',
+                  fontSize:'var(--fs-1)',
                   fontWeight:400,
                   letterSpacing:'0.2em',
                   color:'#BBBBBB',
                   marginBottom:'16px',
                 }}>{String(idx + 1).padStart(2, '0')}</span>
                 <h3 className="heading" style={{
-                  fontSize:'clamp(1.2rem, 2.8vw, 1.6rem)',
+                  fontSize:'var(--fs-4)',
                   marginBottom:'20px',
                   letterSpacing:'-0.01em',
                   lineHeight:1.1,
                 }}>{area.title}</h3>
                 <p className="body-text" style={{
-                  fontSize:'15px',
+                  fontSize:'var(--fs-3)',
                   lineHeight:'1.85',
                   color:'#555',
                 }}>{area.desc}</p>
@@ -1173,12 +1173,12 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16" style={{marginBottom:'64px'}}>
             <div className="md:col-span-5 fade-up">
               <p className="label label-accent" style={{marginBottom:'16px'}}>{t.servicesLabel}</p>
-              <h2 className="heading-impact" style={{fontSize:'clamp(2.5rem,6vw,5rem)',lineHeight:1.05}}>{t.servicesTitle}</h2>
+              <h2 className="heading-impact" style={{fontSize:'var(--fs-6)',lineHeight:1.05}}>{t.servicesTitle}</h2>
             </div>
             <div className="md:col-span-7 fade-up stagger-1 flex flex-col justify-end">
               <p style={{
                 fontFamily:'var(--font-heading)',
-                fontSize:'13px',
+                fontSize:'var(--fs-2)',
                 letterSpacing:'0.15em',
                 textTransform:'uppercase',
                 color:'#888',
@@ -1201,14 +1201,14 @@ export default function Home() {
                 <span style={{
                   display:'block',
                   fontFamily:'var(--font-heading)',
-                  fontSize:'10px',
+                  fontSize:'var(--fs-1)',
                   fontWeight:400,
                   letterSpacing:'0.2em',
                   color:'#BBBBBB',
                   marginBottom:'20px',
                 }}>{String(idx + 1).padStart(2, '0')}</span>
                 <h3 className="heading" style={{
-                  fontSize:'clamp(1.2rem, 2.5vw, 1.5rem)',
+                  fontSize:'var(--fs-4)',
                   marginBottom:'28px',
                   lineHeight:1.1,
                 }}>{service.title}</h3>
@@ -1231,16 +1231,16 @@ export default function Home() {
         <div className="container">
           <div className="fade-up" style={{marginBottom:'64px'}}>
             <p className="label label-accent" style={{marginBottom:'16px'}}>{t.methodologyLabel}</p>
-            <h2 className="heading-impact" style={{fontSize:'clamp(2.5rem,6vw,5rem)',lineHeight:0.95,color:'#fff'}}>{t.methodologyTitle}</h2>
+            <h2 className="heading-impact" style={{fontSize:'var(--fs-6)',lineHeight:0.95,color:'#fff'}}>{t.methodologyTitle}</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" style={{gap:0}}>
             {t.methodology.map((item, idx) => (
               <div key={item.step} className={`fade-up stagger-${(idx % 3) + 1}`} style={{paddingTop:'32px',paddingBottom:'48px',borderTop:'1px solid rgba(255,255,255,0.1)'}}>
                 <span className="font-heading" style={{fontSize:'11px',letterSpacing:'0.2em',color:'#E85D4A',display:'block',marginBottom:'16px'}}>{item.step}</span>
-                <h4 className="heading" style={{fontSize:'clamp(1.2rem, 2.5vw, 1.5rem)',marginBottom:'20px',color:'white'}}>{item.title}</h4>
+                <h4 className="heading" style={{fontSize:'var(--fs-4)',marginBottom:'20px',color:'white'}}>{item.title}</h4>
                 <div style={{width:'100%',height:'1px',backgroundColor:'rgba(255,255,255,0.12)',marginBottom:'20px'}} />
-                <p style={{fontSize:'15px',lineHeight:1.85,color:'rgba(255,255,255,0.6)',fontWeight:300}}>{item.desc}</p>
+                <p style={{fontSize:'var(--fs-3)',lineHeight:1.85,color:'rgba(255,255,255,0.6)',fontWeight:300}}>{item.desc}</p>
               </div>
             ))}
           </div>
@@ -1261,15 +1261,15 @@ export default function Home() {
         <div className="container">
           <div className="fade-up" style={{marginBottom:'64px'}}>
             <p className="label label-accent" style={{marginBottom:'16px'}}>{t.processLabel}</p>
-            <h2 className="heading-impact" style={{fontSize:'clamp(2.5rem,6vw,5rem)',lineHeight:0.95}}>{t.processTitle}</h2>
+            <h2 className="heading-impact" style={{fontSize:'var(--fs-6)',lineHeight:0.95}}>{t.processTitle}</h2>
           </div>
 
           <div>
             {t.processPhases.map((phase, pi) => (
               <div key={phase.phase} className={`fade-up stagger-${pi + 1}`} style={{borderTop:'1px solid #EBEBEB',paddingTop:'40px',marginBottom: pi === 0 ? '80px' : '0'}}>
                 <span className="font-heading" style={{fontSize:'11px',letterSpacing:'0.2em',color:'#E85D4A',display:'block',marginBottom:'16px'}}>{phase.phase}</span>
-                <h3 className="heading-impact" style={{fontSize:'clamp(2rem, 5vw, 3.5rem)',lineHeight:1,marginBottom:'24px'}}>{phase.title}</h3>
-                <p style={{fontSize:'16px',lineHeight:1.9,color:'#444',fontWeight:300,marginTop:'24px',maxWidth:'600px'}}>{phase.desc}</p>
+                <h3 className="heading-impact" style={{fontSize:'var(--fs-5)',lineHeight:1,marginBottom:'24px'}}>{phase.title}</h3>
+                <p style={{fontSize:'var(--fs-3)',lineHeight:1.9,color:'#444',fontWeight:300,marginTop:'24px',maxWidth:'600px'}}>{phase.desc}</p>
               </div>
             ))}
           </div>
@@ -1294,7 +1294,7 @@ export default function Home() {
             <div className="md:col-span-7 fade-up">
               <p className="label label-accent" style={{marginBottom:'16px'}}>{t.contactLabel}</p>
               <h2 className="heading-impact text-white whitespace-pre-line" style={{
-                fontSize:'clamp(3rem,8vw,7rem)',
+                fontSize:'var(--fs-6)',
                 lineHeight:1.15,
                 letterSpacing:'0.02em',
               }}>
@@ -1321,7 +1321,7 @@ export default function Home() {
                     <IconMail />
                     <span style={{
                       fontFamily:'var(--font-dm-sans), DM Sans, sans-serif',
-                      fontSize:'16px',
+                      fontSize:'var(--fs-3)',
                       fontWeight:300,
                       letterSpacing:'0.01em',
                       borderBottom:'1px solid rgba(255,255,255,0.2)',
@@ -1347,7 +1347,7 @@ export default function Home() {
                     <IconMail />
                     <span style={{
                       fontFamily:'var(--font-dm-sans), DM Sans, sans-serif',
-                      fontSize:'16px',
+                      fontSize:'var(--fs-3)',
                       fontWeight:300,
                       letterSpacing:'0.01em',
                       borderBottom:'1px solid rgba(255,255,255,0.2)',
@@ -1367,7 +1367,7 @@ export default function Home() {
                     color:'rgba(255,255,255,0.4)',
                     marginBottom:'8px',
                   }}>{t.contactLocation}</p>
-                  <p style={{fontSize:'15px', color:'rgba(255,255,255,0.6)', fontWeight:300}}>Seoul, Korea</p>
+                  <p style={{fontSize:'var(--fs-3)', color:'rgba(255,255,255,0.6)', fontWeight:300}}>Seoul, Korea</p>
                 </div>
                 <p style={{
                   fontFamily:'var(--font-heading)',
@@ -1424,7 +1424,7 @@ export default function Home() {
             }}>{t.footerCopy}</p>
             <p style={{
               fontFamily:'var(--font-heading)',
-              fontSize:'10px',
+              fontSize:'var(--fs-1)',
               letterSpacing:'0.08em',
               color:'rgba(255,255,255,0.12)',
             }}>THE HEART OF MATTER — Creative Direction Collective</p>
