@@ -645,9 +645,9 @@ export default function Home() {
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled ? 'bg-white/90 backdrop-blur-xl' : 'bg-transparent'
       }`}>
-        <div className="container flex items-center justify-between h-16 md:h-20">
+        <div className="container flex items-center justify-between h-16 md:h-20" style={{paddingLeft:'16px', paddingRight:'16px'}}>
           {/* Logo */}
-          <a href="#" className="font-heading text-[11px] tracking-[0.2em] uppercase font-medium">
+          <a href="#" className="font-heading text-[11px] tracking-[0.2em] uppercase font-medium" style={{color: scrolled ? '#0A0A0A' : '#fff', transition:'color 0.3s'}}>
             THE HEART OF MATTER
           </a>
 
@@ -672,18 +672,21 @@ export default function Home() {
           </div>
 
           {/* Mobile */}
-          <div className="flex items-center gap-3 md:hidden">
-            <div className="flex items-center">
+          <div className="flex items-center md:hidden" style={{gap:'12px'}}>
+            <div className="flex items-center" style={{gap:'4px'}}>
               {(['ko', 'en', 'ja'] as Lang[]).map((l, i) => (
                 <span key={l} className="flex items-center">
-                  {i > 0 && <span className="lang-sep">/</span>}
-                  <button onClick={() => setLang(l)} className={`lang-btn${lang === l ? ' active' : ''}`}>
+                  {i > 0 && <span className="lang-sep" style={{margin:'0 3px', fontSize:'9px', color:'#CCC'}}>/</span>}
+                  <button
+                    onClick={() => setLang(l)}
+                    className={`lang-btn${lang === l ? ' active' : ''}`}
+                    style={{fontSize:'11px', letterSpacing:'0.05em', padding:'4px 2px', minWidth:'20px', color: lang===l ? '#0A0A0A' : '#AAAAAA', fontWeight: lang===l ? 700 : 400}}>
                     {l === 'ko' ? '한' : l === 'en' ? 'EN' : '日'}
                   </button>
                 </span>
               ))}
             </div>
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Menu">
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Menu" style={{padding:'4px', color: scrolled ? '#0A0A0A' : '#fff'}}>
               {mobileMenuOpen ? <IconClose /> : <IconMenu />}
             </button>
           </div>
