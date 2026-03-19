@@ -766,23 +766,23 @@ export default function Home() {
           </div>
           <h1 style={{opacity:0, animation:'fadeInUp 1s ease 0.4s forwards'}}>
             <span className="block" style={{
-              fontFamily:'var(--font-heading)',
+              fontFamily:'var(--font-impact)',
               fontStyle:'normal',
-              fontWeight:300,
-              fontSize:'clamp(3.8rem,11vw,10rem)',
-              lineHeight:0.92,
-              letterSpacing:'-0.02em',
+              fontWeight:400,
+              fontSize:'clamp(4.5rem,13vw,12rem)',
+              lineHeight:0.88,
+              letterSpacing:'0.02em',
               color:'#fff',
             }}>
               THE HEART
             </span>
             <span className="block" style={{
-              fontFamily:'var(--font-heading)',
+              fontFamily:'var(--font-impact)',
               fontStyle:'normal',
-              fontWeight:300,
-              fontSize:'clamp(3.8rem,11vw,10rem)',
-              lineHeight:0.92,
-              letterSpacing:'-0.02em',
+              fontWeight:400,
+              fontSize:'clamp(4.5rem,13vw,12rem)',
+              lineHeight:0.88,
+              letterSpacing:'0.02em',
               color:'#fff',
             }}>
               OF MATTER
@@ -849,7 +849,12 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
             <div className="fade-up">
               <p className="label label-accent mb-6">{t.aboutLabel}</p>
-              <h2 className="pull-quote text-3xl md:text-5xl text-[#0A0A0A] whitespace-pre-line" style={{lineHeight:1.15}}>
+              <h2 className="heading-impact whitespace-pre-line" style={{
+                fontSize:'clamp(2.8rem, 7vw, 5.5rem)',
+                color:'#0A0A0A',
+                lineHeight:1.0,
+                letterSpacing:'0.02em',
+              }}>
                 {t.pullQuote}
               </h2>
             </div>
@@ -906,7 +911,7 @@ export default function Home() {
           <div className="flex items-end justify-between mb-16 md:mb-24">
             <div className="fade-up">
               <p className="label label-accent mb-4">{t.workLabel}</p>
-              <h2 className="heading text-3xl md:text-5xl">{t.workTitle}</h2>
+              <h2 className="heading-impact" style={{fontSize:'clamp(2.5rem,6vw,5rem)', lineHeight:0.95}}>{t.workTitle}</h2>
             </div>
             <p className="hidden md:block project-num fade-up stagger-1">
               {projects.length}{t.workCount}
@@ -924,7 +929,7 @@ export default function Home() {
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-10 gap-4">
                   <div>
                     <p className="label mb-4">{project.artist}</p>
-                    <h3 className="heading text-3xl md:text-7xl">{project.title}</h3>
+                    <h3 className="heading-impact" style={{fontSize:'clamp(2.5rem,8vw,7rem)',lineHeight:0.9}}>{project.title}</h3>
                     <p className="body-text" style={{marginTop:'10px', fontSize:'15px'}}>{project.subtitle}</p>
                   </div>
                   <span className="project-num">
@@ -1025,7 +1030,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 mb-16 md:mb-24">
             <div className="md:col-span-5 fade-up">
               <p className="label label-accent mb-4">{t.servicesLabel}</p>
-              <h2 className="heading text-3xl md:text-5xl">{t.servicesTitle}</h2>
+              <h2 className="heading-impact" style={{fontSize:'clamp(2.5rem,6vw,5rem)',lineHeight:0.95}}>{t.servicesTitle}</h2>
             </div>
             <div className="md:col-span-7 fade-up stagger-1 flex items-end">
               <p className="body-text max-w-xl">{t.servicesDesc}</p>
@@ -1057,7 +1062,7 @@ export default function Home() {
         <div className="container">
           <div className="mb-16 md:mb-24 fade-up">
             <p className="label label-accent mb-4">{t.methodologyLabel}</p>
-            <h2 className="heading text-3xl md:text-5xl text-white">{t.methodologyTitle}</h2>
+            <h2 className="heading-impact" style={{fontSize:'clamp(2.5rem,6vw,5rem)',lineHeight:0.95,color:'#fff'}}>{t.methodologyTitle}</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-12 md:gap-6">
@@ -1087,7 +1092,7 @@ export default function Home() {
         <div className="container">
           <div className="mb-16 md:mb-24 fade-up">
             <p className="label label-accent mb-4">{t.processLabel}</p>
-            <h2 className="heading text-3xl md:text-5xl">{t.processTitle}</h2>
+            <h2 className="heading-impact" style={{fontSize:'clamp(2.5rem,6vw,5rem)',lineHeight:0.95}}>{t.processTitle}</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">

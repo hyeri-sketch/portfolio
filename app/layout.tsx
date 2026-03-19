@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, DM_Serif_Display, Outfit } from "next/font/google";
+import { DM_Sans, DM_Serif_Display, Outfit, Bebas_Neue } from "next/font/google";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -19,6 +19,12 @@ const dmSerif = DM_Serif_Display({
   variable: "--font-dm-serif",
   weight: "400",
   style: ["normal", "italic"],
+});
+
+const bebasNeue = Bebas_Neue({
+  subsets: ["latin"],
+  variable: "--font-bebas",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -41,7 +47,7 @@ export default function RootLayout({
   return (
     <html lang="ko" className="scroll-smooth">
       <body
-        className={`${dmSans.variable} ${outfit.variable} ${dmSerif.variable} font-sans antialiased bg-white text-[#0A0A0A]`}
+        className={`${dmSans.variable} ${outfit.variable} ${dmSerif.variable} ${bebasNeue.variable} font-sans antialiased bg-white text-[#0A0A0A]`}
       >
         {children}
       </body>

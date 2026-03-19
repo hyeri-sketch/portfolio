@@ -13,6 +13,7 @@
   --font-display: var(--font-dm-serif), Georgia, serif;
   --font-heading: var(--font-outfit), "Helvetica Neue", sans-serif;
   --font-sans: var(--font-dm-sans), "Helvetica Neue", sans-serif;
+  --font-impact: var(--font-bebas), "Arial Black", sans-serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -73,9 +74,17 @@ body {
 /* ─── Heading ─── */
 .heading {
   font-family: var(--font-heading);
-  font-weight: 300;
-  letter-spacing: -0.01em;
-  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+/* ─── Impact heading (Bebas Neue) ─── */
+.heading-impact {
+  font-family: var(--font-impact);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 0.92;
 }
 
 /* ─── Body text ─── */
