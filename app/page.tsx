@@ -930,7 +930,7 @@ export default function Home() {
               </h2>
             </div>
             <div className="fade-up stagger-1 flex flex-col justify-end">
-              <h3 className="heading whitespace-pre-line" style={{fontSize:'clamp(1.6rem, 4vw, 2.5rem)', marginBottom:'28px', lineHeight:1.2}}>{t.aboutTitle}</h3>
+              <h3 className="heading whitespace-pre-line" style={{fontSize:'clamp(1.5rem, 3.5vw, 2.2rem)', marginBottom:'28px', lineHeight:1.35}}>{t.aboutTitle}</h3>
               <div style={{display:'flex', flexDirection:'column', gap:'20px'}}>
                 <p className="body-text" style={{fontSize:'16px', lineHeight:'1.85'}}>{t.aboutDesc1}</p>
                 <p className="body-text" style={{fontSize:'16px', lineHeight:'1.85'}}>{t.aboutDesc2}</p>
@@ -951,7 +951,7 @@ export default function Home() {
           <div style={{marginTop:'100px'}} className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
             <div className="md:col-span-4 fade-up">
               <p className="label label-accent" style={{fontSize:'13px', marginBottom:'16px'}}>{t.aboutDiffLabel}</p>
-              <h3 className="heading whitespace-pre-line" style={{fontSize:'clamp(1.7rem, 3.8vw, 2.4rem)', marginBottom:'24px', lineHeight:1.2, marginTop:'4px'}}>{t.aboutDiffTitle}</h3>
+              <h3 className="heading whitespace-pre-line" style={{fontSize:'clamp(1.5rem, 3.5vw, 2.2rem)', marginBottom:'24px', lineHeight:1.35, marginTop:'4px'}}>{t.aboutDiffTitle}</h3>
               <p className="body-text max-w-xl" style={{fontSize:'18px', lineHeight:'1.85'}}>{t.aboutDiffDesc}</p>
             </div>
             <div className="md:col-span-8 fade-up stagger-1" style={{marginTop:'0px'}}>
@@ -1001,7 +1001,7 @@ export default function Home() {
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-4" style={{marginBottom:'40px'}}>
                   <div>
                     <p className="label" style={{marginBottom:'16px'}}>{project.artist}</p>
-                    <h3 className="heading-impact" style={{fontSize:'clamp(2.5rem,8vw,7rem)',lineHeight:1.0}}>{project.title}</h3>
+                    <h3 className="heading-impact" style={{fontSize:'clamp(2.5rem,8vw,7rem)',lineHeight:1.05}}>{project.title}</h3>
                     <p className="body-text" style={{marginTop:'10px', fontSize:'15px'}}>{project.subtitle}</p>
                   </div>
                   <span className="project-num">
