@@ -786,7 +786,36 @@ export default function Home() {
         {/* Background image */}
         <div className="absolute inset-0 z-0">
           <Image src="/images/img_008_48.jpeg" alt="THE HEART OF MATTER" fill
-            className="object-cover brightness-[0.12]" priority />
+            className="object-cover brightness-[0.12] hero-bg-img" priority />
+        </div>
+
+        {/* Gradient overlay — 하단에서 올라오는 그라데이션 */}
+        <div className="absolute inset-0 z-1 pointer-events-none" style={{
+          background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0) 70%)',
+        }} />
+
+        {/* Subtle color vignette — 코너 다크 효과 */}
+        <div className="absolute inset-0 z-1 pointer-events-none" style={{
+          background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.4) 100%)',
+        }} />
+
+        {/* 떠다니는 빛 입자 */}
+        <div className="absolute inset-0 z-2 pointer-events-none overflow-hidden">
+          {[
+            { left:'15%', bottom:'35%', delay:'0s', duration:'6s' },
+            { left:'25%', bottom:'45%', delay:'1.5s', duration:'8s' },
+            { left:'40%', bottom:'30%', delay:'3s', duration:'7s' },
+            { left:'60%', bottom:'40%', delay:'0.8s', duration:'9s' },
+            { left:'75%', bottom:'55%', delay:'2s', duration:'6.5s' },
+            { left:'85%', bottom:'35%', delay:'4s', duration:'8s' },
+            { left:'50%', bottom:'25%', delay:'1s', duration:'7.5s' },
+          ].map((p, i) => (
+            <div key={i} className="hero-particle" style={{
+              left: p.left,
+              bottom: p.bottom,
+              animation: `floatParticle${i % 2 === 0 ? '' : '2'} ${p.duration} ease-in-out ${p.delay} infinite`,
+            }} />
+          ))}
         </div>
 
         {/* Page number — left vertical */}

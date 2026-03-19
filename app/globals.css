@@ -221,10 +221,45 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── Scroll bounce ─── */
-@keyframes bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(6px); }
+/* ─── Scroll pulse (replaces bounce) ─── */
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: translateX(-50%) translateY(0); }
+  50% { opacity: 0.7; transform: translateX(-50%) translateY(8px); }
+}
+
+/* ─── Hero 빛 입자 ─── */
+@keyframes floatParticle {
+  0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+  20% { opacity: 0.6; }
+  80% { opacity: 0.3; }
+  100% { transform: translateY(-120px) translateX(20px); opacity: 0; }
+}
+
+@keyframes floatParticle2 {
+  0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+  20% { opacity: 0.4; }
+  80% { opacity: 0.2; }
+  100% { transform: translateY(-80px) translateX(-30px); opacity: 0; }
+}
+
+.hero-particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+}
+
+/* ─── Hero 배경 미세 이동 (parallax느낌) ─── */
+@keyframes heroBgDrift {
+  0%, 100% { transform: scale(1.05) translateX(0) translateY(0); }
+  33% { transform: scale(1.05) translateX(-8px) translateY(-4px); }
+  66% { transform: scale(1.05) translateX(6px) translateY(-8px); }
+}
+
+.hero-bg-img {
+  animation: heroBgDrift 20s ease-in-out infinite;
 }
 
 /* ─── Pull quote ─── */
