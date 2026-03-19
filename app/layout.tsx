@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { DM_Sans, DM_Serif_Display, Outfit, Comfortaa, Syne } from "next/font/google";
+import { Asta_Sans, DM_Serif_Display, Outfit, Comfortaa, Syne } from "next/font/google";
 import "./globals.css";
 
-const dmSans = DM_Sans({
+const dmSans = Asta_Sans({
   subsets: ["latin"],
   variable: "--font-dm-sans",
-  weight: ["300", "400", "500"],
+  weight: ["400"],
 });
 
 const outfit = Outfit({
