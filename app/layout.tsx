@@ -53,6 +53,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className="scroll-smooth">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+      </head>
       <body
         className={`${dmSans.variable} ${outfit.variable} ${dmSerif.variable} ${comfortaa.variable} ${syne.variable} font-sans antialiased bg-white text-[#0A0A0A]`}
       >
