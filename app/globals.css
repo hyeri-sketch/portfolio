@@ -71,19 +71,19 @@ body {
   letter-spacing: 0.02em;
 }
 
-/* ─── Heading (섹션 타이틀 — Syne 800) ─── */
+/* ─── Heading (섹션 타이틀 — Comfortaa 700, matches logo) ─── */
 .heading {
-  font-family: var(--font-heading);
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-family: var(--font-comfortaa), Comfortaa, cursive;
+  font-weight: 700;
+  letter-spacing: 0.01em;
   line-height: 1.05;
 }
 
-/* ─── Impact heading (Hero/Section — Syne 800, same as .heading) ─── */
+/* ─── Impact heading (Hero/Section — Comfortaa 700, matches logo) ─── */
 .heading-impact {
-  font-family: var(--font-heading);
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-family: var(--font-comfortaa), Comfortaa, cursive;
+  font-weight: 700;
+  letter-spacing: 0.01em;
   line-height: 1.05;
   text-transform: uppercase;
 }
@@ -106,7 +106,7 @@ body {
 /* ─── Tag pill ─── */
 .tag {
   display: inline-block;
-  font-family: var(--font-comfortaa), Nunito, sans-serif;
+  font-family: var(--font-comfortaa), Comfortaa, cursive;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.12em;
