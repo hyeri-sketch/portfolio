@@ -792,21 +792,21 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
             <div className="fade-up">
               <p className="label label-accent mb-6">{t.aboutLabel}</p>
-              <h2 className="pull-quote text-3xl md:text-5xl text-[#0A0A0A] whitespace-pre-line">
+              <h2 className="pull-quote text-3xl md:text-5xl text-[#0A0A0A] whitespace-pre-line" style={{lineHeight:1.15}}>
                 {t.pullQuote}
               </h2>
             </div>
             <div className="fade-up stagger-1 flex flex-col justify-end">
-              <h3 className="heading text-2xl md:text-4xl whitespace-pre-line mb-8">{t.aboutTitle}</h3>
-              <div className="space-y-5">
-                <p className="body-text">{t.aboutDesc1}</p>
-                <p className="body-text">{t.aboutDesc2}</p>
+              <h3 className="heading whitespace-pre-line" style={{fontSize:'clamp(1.6rem, 4vw, 2.5rem)', marginBottom:'28px', lineHeight:1.2}}>{t.aboutTitle}</h3>
+              <div style={{display:'flex', flexDirection:'column', gap:'20px'}}>
+                <p className="body-text" style={{fontSize:'16px', lineHeight:'1.85'}}>{t.aboutDesc1}</p>
+                <p className="body-text" style={{fontSize:'16px', lineHeight:'1.85'}}>{t.aboutDesc2}</p>
               </div>
             </div>
           </div>
 
           {/* About Gallery */}
-          <div className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-4 fade-up stagger-2">
+          <div style={{marginTop:'80px'}} className="grid grid-cols-1 md:grid-cols-3 gap-4 fade-up stagger-2">
             {aboutGallery.map((img, i) => (
               <div key={i} className="relative aspect-[4/3] overflow-hidden img-cover">
                 <Image src={img} alt={`About ${i + 1}`} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
@@ -815,13 +815,13 @@ export default function Home() {
           </div>
 
           {/* What Makes Us Different */}
-          <div className="mt-24 md:mt-40 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
+          <div style={{marginTop:'100px'}} className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
             <div className="md:col-span-4 fade-up">
-              <p className="label label-accent mb-4">{t.aboutDiffLabel}</p>
-              <h3 className="heading text-2xl md:text-3xl whitespace-pre-line mb-8">{t.aboutDiffTitle}</h3>
-              <p className="body-text max-w-xl">{t.aboutDiffDesc}</p>
+              <p className="label label-accent">{t.aboutDiffLabel}</p>
+              <h3 className="heading whitespace-pre-line" style={{fontSize:'clamp(1.5rem, 3.5vw, 2.2rem)', marginBottom:'24px', lineHeight:1.2, marginTop:'4px'}}>{t.aboutDiffTitle}</h3>
+              <p className="body-text max-w-xl" style={{fontSize:'16px', lineHeight:'1.85'}}>{t.aboutDiffDesc}</p>
             </div>
-            <div className="md:col-span-8 fade-up stagger-1">
+            <div className="md:col-span-8 fade-up stagger-1" style={{marginTop:'0px'}}>
               <div className="relative aspect-[16/9] overflow-hidden img-cover">
                 <Image src="/images/img_008_01.jpeg" alt="Creative concept" fill className="object-cover" />
               </div>
@@ -868,7 +868,7 @@ export default function Home() {
                   <div>
                     <p className="label mb-4">{project.artist}</p>
                     <h3 className="heading text-3xl md:text-7xl">{project.title}</h3>
-                    <p className="body-text mt-2">{project.subtitle}</p>
+                    <p className="body-text" style={{marginTop:'10px', fontSize:'15px'}}>{project.subtitle}</p>
                   </div>
                   <span className="project-num">
                     {String(idx + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}
@@ -890,7 +890,7 @@ export default function Home() {
                 </button>
 
                 {/* Category tags */}
-                <div className="flex flex-wrap gap-2 mt-4 md:mt-6">
+                <div className="flex flex-wrap gap-2" style={{marginTop:'20px'}}>
                   {project.category.split(' / ').map(cat => (
                     <span key={cat} className="tag">{cat}</span>
                   ))}
