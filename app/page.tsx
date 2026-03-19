@@ -651,13 +651,50 @@ export default function Home() {
 
         {/* Mobile menu overlay */}
         {mobileMenuOpen && (
-          <div className="md:hidden fixed inset-0 top-16 bg-white z-40 flex flex-col items-center justify-center gap-10">
+          <div style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: '#FFFFFF',
+            zIndex: 9999,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '40px',
+          }}>
+            {/* 닫기 버튼 */}
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              style={{position:'absolute', top:'20px', right:'24px', background:'none', border:'none', cursor:'pointer', color:'#0A0A0A'}}
+            >
+              <IconClose />
+            </button>
+            {/* 로고 */}
+            <p style={{position:'absolute', top:'20px', left:'24px', fontFamily:'var(--font-heading)', fontSize:'11px', letterSpacing:'0.18em', color:'#0A0A0A', fontWeight:400}}>
+              THE HEART OF MATTER
+            </p>
+            {/* 메뉴 링크 */}
             {navLinks.map(link => (
               <a key={link.label} href={link.href} onClick={() => setMobileMenuOpen(false)}
-                className="font-heading text-2xl tracking-tight text-[#0A0A0A]">
+                style={{fontFamily:'var(--font-heading)', fontSize:'28px', letterSpacing:'-0.01em', color:'#0A0A0A', textDecoration:'none', fontWeight:300}}>
                 {link.label}
               </a>
             ))}
+            {/* 언어 토글 */}
+            <div style={{display:'flex', alignItems:'center', marginTop:'8px'}}>
+              {(['ko', 'en', 'ja'] as Lang[]).map((l, i) => (
+                <span key={l} style={{display:'flex', alignItems:'center'}}>
+                  {i > 0 && <span className="lang-sep">/</span>}
+                  <button onClick={() => { setLang(l); setMobileMenuOpen(false); }}
+                    className={`lang-btn${lang === l ? ' active' : ''}`}>
+                    {l === 'ko' ? '한' : l === 'en' ? 'EN' : '日'}
+                  </button>
+                </span>
+              ))}
+            </div>
           </div>
         )}
       </nav>
