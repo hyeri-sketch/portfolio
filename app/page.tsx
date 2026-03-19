@@ -967,7 +967,7 @@ export default function Home() {
               </h2>
             </div>
             <div className="fade-up stagger-1 flex flex-col justify-end">
-              <h3 className="heading whitespace-pre-line" style={{fontSize:'var(--fs-5)', marginBottom:'28px', lineHeight:1.35}}>{t.aboutTitle}</h3>
+              <h3 className="heading whitespace-pre-line" style={{fontSize:'var(--fs-5)', marginBottom:'28px', lineHeight:1.35, color:'#FF3D7F'}}>{t.aboutTitle}</h3>
               <div style={{display:'flex', flexDirection:'column', gap:'20px'}}>
                 <p className="body-text" style={{fontSize:'var(--fs-3)', lineHeight:'1.85'}}>{t.aboutDesc1}</p>
                 <p className="body-text" style={{fontSize:'var(--fs-3)', lineHeight:'1.85'}}>{t.aboutDesc2}</p>
