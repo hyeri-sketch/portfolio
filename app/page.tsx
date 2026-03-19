@@ -866,7 +866,7 @@ export default function Home() {
                 fontSize:'clamp(4.5rem,13vw,12rem)',
                 lineHeight:1.0,
                 letterSpacing:'0.02em',
-                opacity:0,
+                color:'#fff',
               }}>
                 THE HEART
               </span>
