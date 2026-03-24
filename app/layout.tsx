@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Chiron_Hei_HK, DM_Serif_Display, Outfit, Syne, Noto_Sans_KR } from "next/font/google";
+import { Chiron_Hei_HK, DM_Serif_Display, Outfit, Syne, Noto_Sans_KR, Glegoo, Poppins } from "next/font/google";
 import "./globals.css";
 
 const dmSans = Chiron_Hei_HK({
@@ -34,6 +34,18 @@ const syne = Syne({
   weight: ["700", "800"],
 });
 
+const glegoo = Glegoo({
+  subsets: ["latin"],
+  variable: "--font-glegoo",
+  weight: ["400", "700"],
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  variable: "--font-poppins",
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+});
+
 export const metadata: Metadata = {
   title: "THE HEART OF MATTER — Creative Direction Collective",
   description:
@@ -57,7 +69,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       </head>
       <body
-        className={`${dmSans.variable} ${outfit.variable} ${dmSerif.variable} ${comfortaa.variable} ${syne.variable} font-sans antialiased bg-white text-[#0A0A0A]`}
+        className={`${dmSans.variable} ${outfit.variable} ${dmSerif.variable} ${comfortaa.variable} ${syne.variable} ${glegoo.variable} ${poppins.variable} font-sans antialiased bg-white text-[#0A0A0A]`}
       >
         {children}
       </body>
