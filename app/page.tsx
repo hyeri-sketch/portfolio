@@ -588,21 +588,46 @@ const designerTags = [
 ]
 
 /* ─── Navigation ─── */
-const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Work", href: "#work" },
-  { label: "Vision", href: "#vision" },
-  { label: "Services", href: "#services" },
-  { label: "Process", href: "#process" },
-  { label: "Contact", href: "#contact" },
+type Tab = 'about' | 'work' | 'contact'
+const navTabs: { label: string; id: Tab }[] = [
+  { label: "About", id: "about" },
+  { label: "Work", id: "work" },
+  { label: "Contact", id: "contact" },
 ]
 
 /* ─── Main Component ─── */
 export default function Home() {
+  const [showCover, setShowCover] = useState(true)
+  const [coverFading, setCoverFading] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeProject, setActiveProject] = useState<string | null>(null)
   const [lang, setLang] = useState<Lang>('ko')
+  const [activeTab, setActiveTab] = useState<Tab>('about')
+  const [selectedProduct, setSelectedProduct] = useState<number | null>(null)
+
+  const products = [
+    { name:'Pink Logo Tote', price:'$26.00', image:'/images/work-1.png', hoverImage:'/images/work-1-hover.png', desc:'Classic tote bag with iconic logo. Durable cotton canvas.' },
+    { name:'Logo Bottle Opener Keychain', price:'$24.00', image:'/images/work-2.png', desc:'Stainless steel bottle opener keychain with engraved logo.' },
+    { name:'Dog Ear Bookmark', price:'$16.00', image:'/images/work-3.gif', desc:'Metal bookmark with playful dog ear design.' },
+    { name:'Sticker Packs 4.0', price:'$8.00', image:'https://shop.a24films.com/cdn/shop/files/StickerPacks4.0.jpg', desc:'Premium vinyl stickers. Set of 10 assorted designs.' },
+    { name:'2026 Daily Tear-Away Calendar', price:'$38.00', image:'https://shop.a24films.com/cdn/shop/files/20251011_A24_365Calendar_68671x1gray.jpg', desc:'365 daily tear-away pages. Original artwork each day.' },
+    { name:'Movie Log', price:'$22.00', image:'https://shop.a24films.com/cdn/shop/files/20250927_A24_MovieLog_51791x1gray.jpg', desc:'Keep track of every film you watch. Hardcover journal.' },
+    { name:'Logo Bookends', price:'$44.00', image:'https://shop.a24films.com/cdn/shop/products/20220120_A24_BookEnds_5232_1.jpg', desc:'Heavy-duty metal bookends with logo cutout.' },
+    { name:'Genre Candles', price:'$48.00', image:'https://shop.a24films.com/cdn/shop/products/a24_candles_horror_b_1_9bc63d8e-c350-4fea-a6c9-5d0d96e4b5b0.jpg', desc:'Hand-poured soy candles. Horror, Drama, Comedy scents.' },
+    { name:'Genre Candle 3x Set', price:'$40.00', image:'https://shop.a24films.com/cdn/shop/products/horror_dd0ca921-4620-48ab-b24c-98c0e6d11bb3.jpg', desc:'Three genre candles bundled at a special price.' },
+    { name:'Test Card Soap', price:'$16.00', image:'https://shop.a24films.com/cdn/shop/products/20210915_A24_Soap_12901x1gray.jpg', desc:'Artisan bar soap with test card pattern design.' },
+    { name:'Genre Car Fresheners', price:'$12.00', image:'https://shop.a24films.com/cdn/shop/products/20211120_A24_Joya_CarFreshener_3068_1x1_gray_1.jpg', desc:'Hanging car freshener with genre-specific scent.' },
+    { name:'Rainbow Bubble Nalgene', price:'$26.00', image:'https://shop.a24films.com/cdn/shop/files/20250622_A24_NalgeneBottles_7968-1x1-gray.jpg', desc:'32oz Nalgene water bottle with rainbow bubble design.' },
+    { name:'Bubble Nalgene', price:'$26.00', image:'https://shop.a24films.com/cdn/shop/files/20250622_A24_NalgeneBottles_7963-1x1-gray.jpg', desc:'32oz Nalgene water bottle with bubble logo.' },
+    { name:'Logo Beach Towel', price:'$45.00', image:'https://shop.a24films.com/cdn/shop/files/20250604_A24_BeachTowel_26245-front-1x1-gray.jpg', desc:'Oversized cotton terry beach towel with woven logo.' },
+    { name:'Corporate Mug', price:'$15.00', image:'https://shop.a24films.com/cdn/shop/files/20250303_A24_Mugs_18592-1x1-gray.png', desc:'Classic ceramic mug with corporate-style logo.' },
+    { name:'Vintage Glitter Ornament', price:'$15.00', image:'https://shop.a24films.com/cdn/shop/files/20231103_A24_Ornament_6289-1x1-gray.jpg', desc:'Glass ornament with vintage glitter finish.' },
+    { name:'Red Aspect Ratio Blanket', price:'$120.00', image:'https://shop.a24films.com/cdn/shop/files/20241119_A24_AspectRatio_Blanket_7414-1x1-gray.jpg', desc:'Woven cotton blanket with aspect ratio pattern.' },
+    { name:'Purple Logo Scramble Blanket', price:'$95.00', image:'https://shop.a24films.com/cdn/shop/products/20211006_A24_Blankets_08801x1gray.jpg', desc:'Woven blanket with scrambled logo pattern.' },
+    { name:'Rust Logo Scramble Blanket', price:'$95.00', image:'https://shop.a24films.com/cdn/shop/products/20211006_A24_Blankets_08991x1gray.jpg', desc:'Woven blanket in rust with scrambled logo.' },
+    { name:'Collapsible Record Crate', price:'$28.00', image:'https://shop.a24films.com/cdn/shop/files/20240526_A24_RecordCrate_1716-1x1-gray_EDITED.jpg', desc:'Foldable wooden crate for vinyl record storage.' },
+  ]
 
   const t = content[lang]
 
@@ -663,135 +688,418 @@ export default function Home() {
     return () => obs.disconnect()
   }, [])
 
+  const handleEnterSite = () => {
+    setCoverFading(true)
+    setTimeout(() => setShowCover(false), 800)
+  }
+
+  /* ─── Cover Page ─── */
+  if (showCover) {
+    return (
+      <div
+        onClick={handleEnterSite}
+        style={{
+          position:'fixed', inset:0, zIndex:99999,
+          cursor:'pointer',
+          background:'#000',
+          opacity: coverFading ? 0 : 1,
+          transition:'opacity 0.8s ease',
+        }}
+      >
+        {/* Background image */}
+        <Image
+          src="/images/landing-bg.png"
+          alt=""
+          fill
+          style={{objectFit:'cover', objectPosition:'center'}}
+          priority
+        />
+
+        {/* Top logo — full width */}
+        <div style={{position:'absolute', top:0, left:0, right:0, zIndex:2, padding:'12px 18px'}}>
+          <Image
+            src="/images/main_logo.png"
+            alt="THE HEART OF MATTER"
+            width={2000}
+            height={249}
+            style={{width:'100%', height:'auto', display:'block', filter:'brightness(0) saturate(100%) invert(62%) sepia(60%) saturate(1000%) hue-rotate(290deg) brightness(105%) contrast(90%)'}}
+            priority
+          />
+        </div>
+
+        {/* Bottom-right icon — 30x30 */}
+        <div style={{position:'absolute', bottom:'30px', right:'18px', zIndex:2}}>
+          <Image
+            src="/images/center-icon.png"
+            alt=""
+            width={20}
+            height={20}
+            style={{width:'20px', height:'20px', display:'block', filter:'brightness(0) saturate(100%) invert(62%) sepia(60%) saturate(1000%) hue-rotate(290deg) brightness(105%) contrast(90%)'}}
+          />
+        </div>
+
+        {/* Bottom text — centered, proportional to reference */}
+        <div style={{position:'absolute', bottom:0, left:0, right:0, zIndex:2, padding:'30px', display:'flex', justifyContent:'center'}}>
+          <Image
+            src="/images/bottom-text.png"
+            alt=""
+            width={2000}
+            height={198}
+            style={{width:'44%', height:'auto', display:'block', filter:'brightness(0) saturate(100%) invert(62%) sepia(60%) saturate(1000%) hue-rotate(290deg) brightness(105%) contrast(90%)'}}
+          />
+        </div>
+      </div>
+    )
+  }
+
   return (
     <>
-      {/* ─── NAVBAR ─── */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'bg-white/85 backdrop-blur-md' : 'bg-transparent'
-      }`} style={{paddingTop:'env(safe-area-inset-top)'}}>
-        <div className="container flex items-center justify-between h-[58px] md:h-[72px]" style={{paddingLeft:'16px', paddingRight:'16px'}}>
-          {/* Logo */}
-          <a href="#" style={{display:'flex', alignItems:'center', height:'32px', textDecoration:'none'}}>
-            <span style={{
-              fontFamily:'var(--font-comfortaa), Noto Sans KR, sans-serif',
-              fontWeight:700,
-              fontSize:'var(--fs-2)',
-              letterSpacing:'0.12em',
-              lineHeight:1.2,
-              textTransform:'uppercase',
-              whiteSpace:'nowrap',
-              color: scrolled ? '#1A1A1A' : '#ffffff',
-              transition:'color 0.3s',
-            }}>
-              <span style={{color:'#FF3D7F'}}>THE HEART</span>
-              {' '}OF MATTER
-            </span>
-          </a>
-
-          {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map(link => (
-              <a key={link.label} href={link.href}
-                style={{fontFamily:"var(--font-serif), DM Serif Display, serif", fontSize:"11px", letterSpacing:"0.12em", textTransform:"uppercase", color:"#888", transition:"color 0.2s", textDecoration:"none"}} className="hover:text-[#0A0A0A]">
-                {link.label}
-              </a>
-            ))}
-            <div className="flex items-center ml-4">
-              {(['ko', 'en', 'ja'] as Lang[]).map((l, i) => (
-                <span key={l} className="flex items-center">
-                  {i > 0 && <span className="lang-sep">/</span>}
-                  <button onClick={() => setLang(l)} className={`lang-btn${lang === l ? ' active' : ''}`}>
-                    {l === 'ko' ? '한' : l === 'en' ? 'EN' : '日'}
-                  </button>
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Mobile */}
-          <div className="flex items-center md:hidden" style={{gap:'12px'}}>
-            <div className="flex items-center" style={{gap:'4px'}}>
-              {(['ko', 'en', 'ja'] as Lang[]).map((l, i) => (
-                <span key={l} className="flex items-center">
-                  {i > 0 && <span className="lang-sep" style={{margin:'0 3px', fontSize:'13px', color: scrolled ? '#CCC' : 'rgba(255,255,255,0.3)'}}>/</span>}
-                  <button
-                    onClick={() => setLang(l)}
-                    className={`lang-btn${lang === l ? ' active' : ''}`}
-                    style={{fontSize:'11px', letterSpacing:'0.05em', padding:'4px 2px', minWidth:'20px', color: lang===l ? (scrolled ? '#0A0A0A' : '#FFFFFF') : (scrolled ? '#AAAAAA' : 'rgba(255,255,255,0.45)'), fontWeight: lang===l ? 700 : 400}}>
-                    {l === 'ko' ? '한' : l === 'en' ? 'EN' : '日'}
-                  </button>
-                </span>
-              ))}
-            </div>
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Menu" style={{padding:'4px', color: scrolled ? '#0A0A0A' : '#fff'}}>
-              {mobileMenuOpen ? <IconClose /> : <IconMenu />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile menu overlay */}
-      </nav>
-
-      {/* ─── MOBILE MENU OVERLAY (nav 밖으로 꺼냄 — backdrop-blur stacking context 회피) ─── */}
-      {mobileMenuOpen && (
-        <div style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: '#FFFFFF',
-          zIndex: 99999,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '36px',
+      {/* ─── TWO-COLUMN LAYOUT ─── */}
+      <div style={{
+        display:'flex',
+        minHeight:'100vh',
+        background:'#FFFFFF',
+      }}>
+        {/* ─── LEFT SIDEBAR ─── */}
+        <aside style={{
+          width:'260px',
+          minWidth:'260px',
+          padding:'36px 0 40px 32px',
+          display:'flex',
+          flexDirection:'column',
+          justifyContent:'space-between',
+          position:'fixed',
+          top:0,
+          left:0,
+          bottom:0,
+          zIndex:50,
         }}>
-          {/* 로고 — nav와 동일하게 */}
-          <div style={{position:'absolute', top:'20px', left:'16px'}}>
-            <span style={{
-              fontFamily:'var(--font-comfortaa), Noto Sans KR, sans-serif',
-              fontWeight:700,
-              fontSize:'var(--fs-2)',
-              letterSpacing:'0.12em',
-              textTransform:'uppercase',
-              whiteSpace:'nowrap',
-              color:'#1A1A1A',
-            }}>
-              <span style={{color:'#FF3D7F'}}>THE HEART</span>
-              {' '}OF MATTER
-            </span>
-          </div>
-          {/* 닫기 버튼 */}
-          <button
-            onClick={() => setMobileMenuOpen(false)}
-            style={{position:'absolute', top:'18px', right:'20px', background:'none', border:'none', cursor:'pointer', color:'#0A0A0A', padding:'4px'}}
-          >
-            <IconClose />
-          </button>
-          {/* 메뉴 링크 */}
-          {navLinks.map(link => (
-            <a key={link.label} href={link.href} onClick={() => setMobileMenuOpen(false)}
-              style={{fontFamily:'var(--font-comfortaa), Noto Sans KR, sans-serif', fontSize:'var(--fs-4)', letterSpacing:'0.05em', color:'#0A0A0A', textDecoration:'none', fontWeight:700, lineHeight:1, textTransform:'uppercase'}}>
-              {link.label}
+          {/* Top: Logo + Nav */}
+          <div>
+            {/* Logo */}
+            <a href="/" style={{textDecoration:'none', display:'block', marginBottom:'28px'}}>
+              <Image src="/logo-stacked.png" alt="THE HEART OF MATTER" width={675} height={195} style={{objectFit:'contain', width:'220px', height:'auto'}} />
             </a>
-          ))}
-          {/* 언어 토글 */}
-          <div style={{display:'flex', alignItems:'center', gap:'8px', marginTop:'4px'}}>
-            {(['ko', 'en', 'ja'] as Lang[]).map((l, i) => (
-              <span key={l} style={{display:'flex', alignItems:'center', gap:'8px'}}>
-                {i > 0 && <span style={{color:'#DDD', fontSize:'11px'}}>/</span>}
-                <button onClick={() => { setLang(l); setMobileMenuOpen(false); }}
-                  style={{background:'none', border:'none', cursor:'pointer', fontFamily:'var(--font-heading)', fontSize:'var(--fs-2)', letterSpacing:'0.08em', color: lang===l ? (scrolled ? '#0A0A0A' : '#FFFFFF') : (scrolled ? '#AAAAAA' : 'rgba(255,255,255,0.45)'), fontWeight: lang===l ? 700 : 400, padding:'4px 2px'}}>
-                  {l === 'ko' ? '한' : l === 'en' ? 'EN' : '日'}
+
+            {/* Nav tabs */}
+            <nav style={{display:'flex', flexDirection:'row', gap:'18px'}}>
+              {navTabs.map(tab => (
+                <button key={tab.id}
+                  onClick={() => { setActiveTab(tab.id); window.scrollTo(0, 0); }}
+                  style={{
+                    background:'none', border:'none', cursor:'pointer', padding:'0',
+                    fontFamily:'var(--font-poppins)',
+                    fontSize:'24px',
+                    letterSpacing:'0.01em',
+                    color:'#0A0A0A',
+                    fontWeight: 500,
+                    textAlign:'left',
+                    textDecoration: activeTab === tab.id ? 'underline' : 'none',
+                    textUnderlineOffset:'3px',
+                    transition:'opacity 0.2s',
+                    opacity: activeTab === tab.id ? 1 : 0.5,
+                  }}
+                  onMouseEnter={e => (e.currentTarget.style.opacity = '1')}
+                  onMouseLeave={e => { if (activeTab !== tab.id) e.currentTarget.style.opacity = '0.5'; }}
+                >
+                  {tab.label}
                 </button>
-              </span>
+              ))}
+            </nav>
+
+            {/* Category list */}
+            <div style={{display:'flex', flexDirection:'column', gap:'0px', marginTop:'100px'}}>
+              {['All', 'Brand Identity', 'Visual Identity', 'Graphic Design', 'Video', 'Photo'].map(cat => (
+                <span key={cat} style={{
+                  fontFamily:'var(--font-poppins)',
+                  fontSize:'24px',
+                  fontWeight:500,
+                  lineHeight:'1.4',
+                  color:'#0A0A0A',
+                  letterSpacing:'0.01em',
+                }}>{cat}</span>
+              ))}
+            </div>
+          </div>
+
+          {/* Bottom: Copyright */}
+          <p style={{
+            fontFamily:'var(--font-poppins)',
+            fontSize:'21px',
+            fontWeight:500,
+            color:'#7b7b7b',
+            letterSpacing:'0.01em',
+          }}>
+            Copyright 2026
+          </p>
+        </aside>
+
+        {/* ─── RIGHT CONTENT AREA ─── */}
+        <div style={{
+          marginLeft:'360px',
+          flex:1,
+          minHeight:'100vh',
+        }}>
+
+      {/* ─── TAB: WORK ─── */}
+      {activeTab === 'work' && (<>
+      <main style={{
+        minHeight:'100vh',
+        background:'#FFFFFF',
+      }}>
+        <div style={{
+          padding:'24px 16px',
+          maxWidth:'1200px',
+          margin:'0 auto',
+        }}>
+          {/* Sorting / Filter bar */}
+
+          {/* Product Grid — 4 per row */}
+          <div style={{
+            display:'grid',
+            gridTemplateColumns:'repeat(4, 1fr)',
+            gap:'16px',
+          }}>
+            {products.map((product, i) => (
+              <div key={i}
+                onClick={() => setSelectedProduct(i)}
+                style={{
+                  cursor:'pointer',
+                  background:'transparent',
+                  border:'none',
+                  overflow:'hidden',
+                }}
+                onMouseEnter={e => {
+                  const hoverImg = e.currentTarget.querySelector('.hover-img') as HTMLElement;
+                  const baseImg = e.currentTarget.querySelector('.base-img') as HTMLElement;
+                  if (hoverImg && baseImg) { hoverImg.style.opacity = '1'; baseImg.style.opacity = '0'; }
+                }}
+                onMouseLeave={e => {
+                  const hoverImg = e.currentTarget.querySelector('.hover-img') as HTMLElement;
+                  const baseImg = e.currentTarget.querySelector('.base-img') as HTMLElement;
+                  if (hoverImg && baseImg) { hoverImg.style.opacity = '0'; baseImg.style.opacity = '1'; }
+                }}
+              >
+                <div style={{
+                  position:'relative',
+                  width:'100%',
+                  paddingBottom:'100%',
+                  background:'transparent',
+                }}>
+                  <img
+                    className="base-img"
+                    src={product.image}
+                    alt={product.name}
+                    style={{
+                      position:'absolute',
+                      inset:0,
+                      width:'100%',
+                      height:'100%',
+                      objectFit:'cover',
+                      transition:'opacity 0.3s ease',
+                    }}
+                  />
+                  {(product as any).hoverImage && (
+                    <img
+                      className="hover-img"
+                      src={(product as any).hoverImage}
+                      alt={product.name}
+                      style={{
+                        position:'absolute',
+                        inset:0,
+                        width:'100%',
+                        height:'100%',
+                        objectFit:'cover',
+                        opacity:0,
+                        transition:'opacity 0.3s ease',
+                      }}
+                    />
+                  )}
+                </div>
+              </div>
             ))}
           </div>
         </div>
+
+        {/* ─── Product Popup Modal ─── */}
+        {selectedProduct !== null && (
+          <div
+            onClick={() => setSelectedProduct(null)}
+            style={{
+              position:'fixed',
+              inset:0,
+              zIndex:99998,
+              background:'rgba(0,0,0,0.4)',
+              display:'flex',
+              alignItems:'center',
+              justifyContent:'center',
+            }}
+          >
+            <div
+              onClick={e => e.stopPropagation()}
+              style={{
+                background:'#fff',
+                border:'2px solid #0A0A0A',
+                width:'90%',
+                maxWidth:'560px',
+                maxHeight:'85vh',
+                overflow:'hidden',
+                display:'flex',
+                flexDirection:'column',
+                boxShadow:'4px 4px 0px rgba(0,0,0,0.15)',
+              }}
+            >
+              {/* Title bar — retro window style */}
+              <div style={{
+                background:'#0000aa',
+                padding:'6px 10px',
+                display:'flex',
+                alignItems:'center',
+                justifyContent:'space-between',
+              }}>
+                <span style={{
+                  fontFamily:'monospace',
+                  fontWeight:700,
+                  fontSize:'14px',
+                  color:'#fff',
+                  letterSpacing:'0.08em',
+                  textTransform:'uppercase',
+                }}>
+                  {products[selectedProduct].name}
+                </span>
+                <button
+                  onClick={() => setSelectedProduct(null)}
+                  style={{
+                    background:'#c0c0c0',
+                    border:'2px outset #fff',
+                    width:'22px',
+                    height:'22px',
+                    display:'flex',
+                    alignItems:'center',
+                    justifyContent:'center',
+                    cursor:'pointer',
+                    fontFamily:'monospace',
+                    fontWeight:700,
+                    fontSize:'14px',
+                    lineHeight:1,
+                    color:'#0A0A0A',
+                    padding:0,
+                  }}
+                >×</button>
+              </div>
+
+              {/* Product image */}
+              <div style={{
+                background:'#f0f0f0',
+                display:'flex',
+                alignItems:'center',
+                justifyContent:'center',
+                padding:'32px',
+              }}>
+                <img
+                  src={products[selectedProduct].image}
+                  alt={products[selectedProduct].name}
+                  style={{
+                    maxWidth:'100%',
+                    maxHeight:'360px',
+                    objectFit:'contain',
+                  }}
+                />
+              </div>
+
+              {/* Info bar */}
+              <div style={{
+                borderTop:'2px solid #0000aa',
+                padding:'12px 16px',
+                background:'#fff',
+              }}>
+                <p style={{
+                  fontFamily:'monospace',
+                  fontSize:'13px',
+                  color:'#0A0A0A',
+                  letterSpacing:'0.05em',
+                  textAlign:'center',
+                  textTransform:'uppercase',
+                }}>
+                  {products[selectedProduct].price} &nbsp;·&nbsp; {products[selectedProduct].desc}
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+      </main>
+      </>)}
+
+      {/* ─── TAB: CONTACT ─── */}
+      {activeTab === 'contact' && (
+        <main style={{minHeight:'100vh', background:'#FFFFFF'}}>
+          <div style={{display:'flex', alignItems:'center', justifyContent:'center', minHeight:'calc(100vh - 48px)'}}>
+            <p style={{fontFamily:'var(--font-sans)', fontSize:'14px', color:'#AAAAAA', letterSpacing:'0.05em'}}>
+              Contact — Coming Soon
+            </p>
+          </div>
+        </main>
       )}
 
+      {/* ─── TAB: ABOUT ─── */}
+      {activeTab === 'about' && (<>
+
+      {/* ─── ABOUT: Oddity-style editorial ─── */}
+      <main style={{
+        minHeight:'100vh',
+        background:'#FFFFFF',
+      }}>
+        <div style={{
+          padding:'98px 28px 4vw 0',
+          maxWidth:'100%',
+        }}>
+          <div style={{
+            fontFamily:'var(--font-poppins)',
+            fontWeight:400,
+            fontSize:'27px',
+            lineHeight:1.3,
+            color:'#f57fbf',
+          }}>
+            <p style={{marginBlockStart:'0', marginBlockEnd:'1em'}}>
+              We are an independent design studio practicing design as conceptual art. The studio focuses on Branding, Graphic Design, Web, Art and Creative Direction and works internationally with wide range of clients.
+            </p>
+
+            <p style={{marginBlockStart:'1em', marginBlockEnd:'1em'}}>
+              We create thoroughly crafted conceptual brand identities based on simple narratives, translated into design language. For us, concept is a non-negotiable part of the design process. It is the underlying filter for decision-making — we set clear outlines and making possibilities precisely limited. Our process is rooted in real world experience, from production to advertising, allowing us a unique, standing out outcomes.
+            </p>
+
+            <p style={{marginBlockStart:'1em', marginBlockEnd:'1em'}}>
+              Our work has been recognised with awards from D&AD, Tokyo TDC, Dezeen, One Show, Art Directors Club New York, China Award360°, and has appeared in prestigious media such as It&#39;s Nice That, BP&O, The Brand Identity and BrandNew, to name a few.
+            </p>
+
+            <div style={{marginBlockStart:'1em', marginBlockEnd:'1em'}}>
+              <span>Our expertise:</span>
+              <br />
+              {[
+                'New brand identity',
+                'Rebranding',
+                'Art Direction',
+                'Packaging',
+                'Printed Matter',
+                'Web Design',
+                'Creative Coding',
+                'Motion graphics',
+                'Typography',
+                'Photography',
+                'Art',
+              ].map((item, i) => (
+                <span key={i} style={{display:'block'}}>- {item}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </main>
+
+      {/* ─── END ABOUT TAB ─── */}
+      </>)}
+
+      {/* ─── LEGACY ABOUT CONTENT (hidden) ─── */}
+      {false && (<>
       {/* ─── HERO (fullscreen, editorial) ─── */}
       <section className="relative min-h-screen flex flex-col justify-end overflow-hidden">
         {/* Background image */}
@@ -860,7 +1168,7 @@ export default function Home() {
                 display:'block',
                 fontFamily:'var(--font-comfortaa), Noto Sans KR, sans-serif',
                 fontStyle:'normal',
-                fontWeight:700,
+                fontWeight:400,
                 fontSize:'var(--fs-7)',
                 lineHeight:1.0,
                 letterSpacing:'0.02em',
@@ -873,7 +1181,7 @@ export default function Home() {
               <span className="hero-text-inner" style={{
                 fontFamily:'var(--font-comfortaa), Noto Sans KR, sans-serif',
                 fontStyle:'normal',
-                fontWeight:700,
+                fontWeight:400,
                 fontSize:'var(--fs-7)',
                 lineHeight:1.0,
                 letterSpacing:'0.06em',
@@ -1114,7 +1422,7 @@ export default function Home() {
                 letterSpacing:'0.01em',
                 color:'#444',
                 marginBottom:'48px',
-                fontWeight:700,
+                fontWeight:400,
               }}>
                 {lang === 'ko' ? '경계는 없다. 심장이 뛰는 곳에 세계가 있을 뿐이다.' : lang === 'en' ? 'There are no borders. Only worlds where the heart beats.' : '境界はない。心臓が鼓動する場所に世界があるだけだ。'}
               </p>
@@ -1381,51 +1689,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── FOOTER ─── */}
-      <footer style={{
-        paddingTop:'48px',
-        paddingBottom:'56px',
-        background:'#0A0A0A',
-        borderTop:'1px solid rgba(255,255,255,0.08)',
-      }}>
-        <div className="container" style={{display:'flex', flexDirection:'column', gap:'32px'}}>
-          {/* Nav links row */}
-          <div style={{display:'flex', flexWrap:'wrap', gap:'24px', alignItems:'center'}}>
-            {navLinks.map(link => (
-              <a key={link.label} href={link.href}
-                style={{
-                  fontFamily:'var(--font-heading)',
-                  fontSize:'11px',
-                  letterSpacing:'0.18em',
-                  textTransform:'uppercase',
-                  color:'rgba(255,255,255,0.35)',
-                  textDecoration:'none',
-                  transition:'color 0.2s',
-                }}
-                className="hover:text-white">
-                {link.label}
-              </a>
-            ))}
-          </div>
-          {/* Divider */}
-          <div style={{width:'100%', height:'1px', background:'rgba(255,255,255,0.06)'}} />
-          {/* Copyright */}
-          <div style={{display:'flex', flexDirection:'column', gap:'8px'}}>
-            <p style={{
-              fontFamily:'var(--font-heading)',
-              fontSize:'11px',
-              letterSpacing:'0.12em',
-              color:'rgba(255,255,255,0.2)',
-            }}>{t.footerCopy}</p>
-            <p style={{
-              fontFamily:'var(--font-heading)',
-              fontSize:'13px',
-              letterSpacing:'0.08em',
-              color:'rgba(255,255,255,0.12)',
-            }}>THE HEART OF MATTER — Creative Direction Collective</p>
-          </div>
-        </div>
-      </footer>
+      {/* ─── END LEGACY ABOUT ─── */}
+      </>)}
+
+        </div>{/* end right content area */}
+      </div>{/* end two-column layout */}
     </>
   )
 }
