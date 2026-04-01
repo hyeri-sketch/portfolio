@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import Image from 'next/image'
 
 type Lang = 'ko' | 'en' | 'ja'
@@ -597,8 +598,30 @@ const navTabs: { label: string; id: Tab }[] = [
 
 /* ─── Main Component ─── */
 export default function Home() {
+  const searchParams = useSearchParams()
+  const [isUnlocked, setIsUnlocked] = useState(false)
   const [showCover, setShowCover] = useState(true)
   const [coverFading, setCoverFading] = useState(false)
+
+  // Access control: check cookie or query param
+  useEffect(() => {
+    const UNLOCK_KEY = 'heartofmatter2026'
+    const paramKey = searchParams.get('key')
+    const hasCookie = document.cookie.split(';').some(c => c.trim().startsWith('thom_access='))
+
+    if (paramKey === UNLOCK_KEY || hasCookie) {
+      if (paramKey === UNLOCK_KEY && !hasCookie) {
+        document.cookie = 'thom_access=1; path=/; max-age=31536000; SameSite=Lax'
+      }
+      setIsUnlocked(true)
+      // Remove key from URL without reload
+      if (paramKey) {
+        const url = new URL(window.location.href)
+        url.searchParams.delete('key')
+        window.history.replaceState({}, '', url.toString())
+      }
+    }
+  }, [searchParams])
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeProject, setActiveProject] = useState<string | null>(null)
@@ -697,10 +720,10 @@ export default function Home() {
   if (showCover) {
     return (
       <div
-        onClick={handleEnterSite}
+        onClick={isUnlocked ? handleEnterSite : undefined}
         style={{
           position:'fixed', inset:0, zIndex:99999,
-          cursor:'pointer',
+          cursor: isUnlocked ? 'pointer' : 'default',
           background:'#000',
           opacity: coverFading ? 0 : 1,
           transition:'opacity 0.8s ease',
