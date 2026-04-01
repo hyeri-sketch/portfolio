@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useSearchParams } from 'next/navigation'
 import Image from 'next/image'
 
 type Lang = 'ko' | 'en' | 'ja'
@@ -598,7 +597,6 @@ const navTabs: { label: string; id: Tab }[] = [
 
 /* ─── Main Component ─── */
 export default function Home() {
-  const searchParams = useSearchParams()
   const [isUnlocked, setIsUnlocked] = useState(false)
   const [showCover, setShowCover] = useState(true)
   const [coverFading, setCoverFading] = useState(false)
@@ -606,7 +604,8 @@ export default function Home() {
   // Access control: check cookie or query param
   useEffect(() => {
     const UNLOCK_KEY = 'heartofmatter2026'
-    const paramKey = searchParams.get('key')
+    const params = new URLSearchParams(window.location.search)
+    const paramKey = params.get('key')
     const hasCookie = document.cookie.split(';').some(c => c.trim().startsWith('thom_access='))
 
     if (paramKey === UNLOCK_KEY || hasCookie) {
@@ -621,7 +620,7 @@ export default function Home() {
         window.history.replaceState({}, '', url.toString())
       }
     }
-  }, [searchParams])
+  }, [])
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeProject, setActiveProject] = useState<string | null>(null)
